@@ -11,26 +11,18 @@
         <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
         <div class="nav-collapse collapse navbar-inverse-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Hem</a></li>
             <li class="dropdown">
-              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret"> </b></a>
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
               <ul class="dropdown-menu">
-                <li><a href="workflow.html">Workflow</a></li>
-                <li><a href="logical-models.html">Logical Models</a></li>
-                <li><a href="mappings.html">Mappings</a></li>
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis → Condition</a></li>
+                <li><a href="mapping-getdocumentlist.html">GetDocumentList → DocumentReference</a></li>
               </ul>
             </li>
-            <li class="dropdown">
-              <a data-toggle="dropdown" href="#" class="dropdown-toggle">FHIR Artifacts<b class="caret"> </b></a>
-              <ul class="dropdown-menu">
-                <li><a href="profiles.html">Profiles</a></li>
-                <li><a href="terminology.html">Terminology</a></li>
-                <li><a href="examples.html">Examples</a></li>
-                <li><a href="artifacts.html">All Artifacts</a></li>
-              </ul>
-            </li>
-            <li><a href="downloads.html">Downloads</a></li>
-            <li><a href="version-history.html">Version History</a></li>
+            <li><a href="naming-systems.html">OID-mappningar</a></li>
+            <li><a href="architecture.html">Arkitektur</a></li>
+            <li><a href="artifacts.html">Artefakter</a></li>
+            <li><a href="downloads.html">Nedladdningar</a></li>
           </ul>
         </div>
       </div>
