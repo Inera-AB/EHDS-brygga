@@ -13,8 +13,8 @@ EHDS-bryggan mappar svarsmeddelandet från detta tjänstekontrakt till FHIR R4-r
 
 | RIVTA-element | FHIR-element | Kommentar |
 |---|---|---|
-| `diagnosisHeader.patientId.extension` | `Condition.subject.identifier.value` | Personnummer eller samordningsnummer |
-| `diagnosisHeader.patientId.root` | `Condition.subject.identifier.system` | OID konverteras till URN, se tabell nedan |
+| `diagnosisHeader.patientId.extension` | `Condition.subject.identifier.value` | Personnummer eller samordningsnummer – subject är SEBasePatient |
+| `diagnosisHeader.patientId.root` | `Condition.subject.identifier.system` | OID konverteras till URI, se tabell nedan |
 | `diagnosisHeader.sourceSystemHSAId` | `Condition.meta.source` | Källsystemets HSA-id som URI (urn:oid:{OID}#{hsaId}) |
 | `diagnosisHeader.documentTime` | `Condition.recordedDate` | Format YYYYMMDDHHMMSS → ISO 8601 |
 | `diagnosisBody.diagnosisCode.code` | `Condition.code.coding.code` | ICD-10-SE kod, t.ex. `J18.9` |
@@ -25,11 +25,30 @@ EHDS-bryggan mappar svarsmeddelandet från detta tjänstekontrakt till FHIR R4-r
 | `diagnosisBody.diagnosisType` (BY) | `Condition.category[diagnostyp]` = `BY` (kv_diagnostyp) | Bidiagnos → Ineras kv_diagnostyp-kod |
 | `diagnosisBody.diagnosisTimePeriod.start` | `Condition.onsetDateTime` | Format YYYYMMDD → YYYY-MM-DD |
 | `diagnosisBody.diagnosisTimePeriod.end` | `Condition.abatementDateTime` | Om satt: resolved, annars active |
+| `diagnosisHeader.accountableHealthcareProfessional` | `Condition.recorder` (Reference(PractitionerRole)) | Ansvarig hälso- och sjukvårdspersonal – logisk referens via HSA-id |
+| `diagnosisHeader.legalAuthenticator` | `Condition.asserter` (Reference(PractitionerRole)) | Rättslig äkthetsintygsgivare – logisk referens via HSA-id |
+| `diagnosisHeader.legalAuthenticator` (datum) | `Condition.extension[assertedDate]` | Administrativt intygsgivningsdatum (YYYYMMDD → YYYY-MM-DD) |
 | `diagnosisHeader.careProviderHSAId` | `Provenance.agent[custodian]` | Juridiskt ansvarig vårdgivare – används för Sparr |
 | `diagnosisHeader.careUnitHSAId` | `Provenance.agent[author]` | Informationsägare vårdenhet |
-| EPS `extension:assertedDate` | `Condition.extension[assertedDate]` | Administrativt datum (om tillämpligt) |
 | `diagnosisHeader.documentTime` | `Provenance.recorded` | Tidsstämpel för Provenance |
 | (bryggan självt, `EHDS_BRIDGE_HSA_ID`) | `Provenance.agent[assembler]` | Bryggan som sammansättande aktör |
+
+## healthcareProfessionalType → PractitionerRole
+
+Både `accountableHealthcareProfessional` och `legalAuthenticator` är av RIVTA-typen
+`healthcareProfessionalType`, som innehåller uppgifter om en person och deras yrkesroll
+vid tidpunkten för dokumentet. Dessa mappas till FHIR `PractitionerRole` som anges
+som logisk referens via HSA-identifierare.
+
+| RIVTA-underelement | FHIR PractitionerRole-fält | Kommentar |
+|---|---|---|
+| `healthcareProfessional.personId` | `PractitionerRole.identifier.value` | HSA-id för personen |
+| `healthcareProfessional.personId.root` | `PractitionerRole.identifier.system` | OID→URI via NamingSystemRegistry |
+| `roleAtTime` | `PractitionerRole.code` | Yrkeskategori/roll vid tillfället |
+
+`accountableHealthcareProfessional` mappas till `Condition.recorder` och
+`legalAuthenticator` mappas till `Condition.asserter`. Datum för `legalAuthenticator`
+placeras i `Condition.extension[assertedDate]`.
 
 ## EU-profiler i meta.profile
 
@@ -228,6 +247,8 @@ Profilen [SEEHDSCondition](StructureDefinition-se-ehds-condition.html) kräver f
 - `category` – minst en diagnostyp
 - `code` – diagnoskod med minst en coding
 - `subject.identifier` – patientidentifierare med system och value
+- `recorder.identifier.system` och `recorder.identifier.value` – om recorder är satt (accountableHealthcareProfessional)
+- `asserter.identifier.system` och `asserter.identifier.value` – om asserter är satt (legalAuthenticator)
 
 Bryggan avvisar RIVTA-svar som saknar obligatoriska fält och loggar valideringsfel.
 

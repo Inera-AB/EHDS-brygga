@@ -9,52 +9,47 @@ Mappas från Ineras RIVTA-tjänstekontrakt GetDocumentList
 
 Profilen alignar med EURIDICE/EHDS EU-specifikationer för kliniska dokument
 och säkerställer att:
+- Dokumentidentifierare (documentId) är angiven som masterIdentifier
 - Dokumenttyp (LOINC) är angiven
-- Patient är identifierad med personnummer eller samordningsnummer
+- Patient är identifierad med personnummer eller samordningsnummer (SEBasePatient)
 - Källsystem identifieras via meta.source (urn:oid:{HSA_OID}#{hsaId})
-- Ansvarig hälso- och sjukvårdspersonal (accountableHealthcareProfessional) är angiven som author
-- Rättslig äkthetsintygsgivare (legalAuthenticator) är angiven som authenticator
+- Ansvarig hälso- och sjukvårdspersonal (accountableHealthcareProfessional) är angiven som author (SEBasePractitionerRole)
+- Rättslig äkthetsintygsgivare (legalAuthenticator) är angiven som authenticator (SEBasePractitionerRole)
 - Ansvarig vårdgivare bärs av Provenance.agent[role=custodian] (inte inne i resursen)
 """
 
 * meta.source MS
 * meta.source ^short = "HSA-id för källsystemet, format: urn:oid:1.2.752.129.2.1.4.1#{hsaId}"
 
-* masterIdentifier MS
+* masterIdentifier 1..1 MS
 * masterIdentifier ^short = "Dokumentets unika identifierare (documentId från RIVTA)"
 
 * status 1..1 MS
 * status ^short = "current för aktiva dokument, superseded för inaktiva"
 
 * type 1..1 MS
-* type ^short = "Dokumenttyp (t.ex. LOINC-kod)"
+* type ^short = "Dokumenttyp (t.ex. LOINC-kod från c80-doc-typecodes)"
 * type from http://hl7.org/fhir/ValueSet/c80-doc-typecodes (extensible)
+* type.text MS
+* type.text ^short = "Fritext dokumenttyp (typeCode.originalText från RIVTA); används om displayName saknas"
 
 * subject 1..1 MS
-* subject only Reference(Patient)
-* subject ^short = "Patient som dokumentet gäller"
+* subject only Reference($seEhdsPatient)
+* subject ^short = "Patient som dokumentet gäller – identifieras med personnummer eller samordningsnummer (SEEHDSPatient)"
 * subject.identifier 1..1 MS
 * subject.identifier.system 1..1 MS
 * subject.identifier.value 1..1 MS
 
-* date MS
+* date 1..1 MS
 * date ^short = "Dokumentets skapandetid (documentTime från RIVTA)"
 
 * author 1..* MS
-* author only Reference(PractitionerRole)
-* author ^short = "Ansvarig hälso- och sjukvårdspersonal (accountableHealthcareProfessional från RIVTA), representerad som PractitionerRole"
-* author.identifier MS
-* author.identifier.system MS
-* author.identifier.system ^short = "HSA-id-system: urn:oid:1.2.752.129.2.1.4.1 (Inera NTjP) eller urn:oid:1.2.752.29.4.19 (HL7 Sweden basprofiler)"
-* author.identifier.value MS
+* author only Reference($seBasePractitionerRole)
+* author ^short = "Ansvarig hälso- och sjukvårdspersonal (accountableHealthcareProfessional från RIVTA) – SEBasePractitionerRole med HSA-id i identifier[hsaid]"
 
 * authenticator MS
-* authenticator only Reference(PractitionerRole)
-* authenticator ^short = "Rättslig äkthetsintygsgivare (legalAuthenticator från RIVTA), representerad som PractitionerRole"
-* authenticator.identifier MS
-* authenticator.identifier.system MS
-* authenticator.identifier.system ^short = "HSA-id-system: urn:oid:1.2.752.129.2.1.4.1 (Inera NTjP) eller urn:oid:1.2.752.29.4.19 (HL7 Sweden basprofiler)"
-* authenticator.identifier.value MS
+* authenticator only Reference($seBasePractitionerRole)
+* authenticator ^short = "Rättslig äkthetsintygsgivare (legalAuthenticator från RIVTA) – SEBasePractitionerRole med HSA-id i identifier[hsaid]"
 
 * description MS
 * description ^short = "Dokumenttitel (title från RIVTA)"

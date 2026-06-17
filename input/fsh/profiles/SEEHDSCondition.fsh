@@ -10,16 +10,14 @@ Mappas från Ineras RIVTA-tjänstekontrakt GetDiagnosis
 
 Profilen säkerställer att:
 - Diagnoskod (ICD-10-SE) är angiven
-- Patient är identifierad med personnummer eller samordningsnummer
+- Patient är identifierad med personnummer eller samordningsnummer (SEBasePatient)
 - Diagnostyp (HD/BY) är angiven som ett namngivet snitt i category
 - Källsystem identifieras via meta.source (urn:oid:{HSA_OID}#{hsaId})
+- Ansvarig hälso- och sjukvårdspersonal anges som recorder (SEBasePractitionerRole)
+- Rättslig äkthetsintygsgivare anges som asserter (SEBasePractitionerRole)
 - Ansvarig vårdgivare bärs av Provenance.agent[role=custodian] (inte inne i resursen)
 """
 
-// EURIDICE/EHDS alignment: markera att denna profil implementerar EU EHDS Condition
-* ^baseDefinition = "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
-
-// IPS kräver att patientens medicinska historia är representerad
 * bodySite MS
 * note MS
 
@@ -27,10 +25,10 @@ Profilen säkerställer att:
 * meta.source ^short = "HSA-id för källsystemet, format: urn:oid:1.2.752.129.2.1.4.1#{hsaId}"
 
 * extension contains ExtAssertedDate named assertedDate 0..1 MS
-* extension[assertedDate] ^short = "Administrativt datum (EPS extension:assertedDate)"
+* extension[assertedDate] ^short = "Administrativt intygsgivningsdatum för legalAuthenticator (YYYYMMDD → YYYY-MM-DD)"
 
 * clinicalStatus 1..1 MS
-* clinicalStatus ^short = "Klinisk status: active om ingen slutdatum, resolved om slutdatum finns"
+* clinicalStatus ^short = "Klinisk status: active om inget slutdatum, resolved om slutdatum finns"
 * clinicalStatus from $conditionClinical (required)
 
 * verificationStatus 1..1 MS
@@ -66,8 +64,8 @@ Profilen säkerställer att:
 * code.coding[ICD10SE].display ^short = "Klartext för diagnosen, t.ex. Pneumoni, ospecificerad"
 
 * subject 1..1 MS
-* subject only Reference($ipsPatient)
-* subject ^short = "Patient som diagnosen gäller – identifieras med personnummer eller samordningsnummer"
+* subject only Reference($seEhdsPatient)
+* subject ^short = "Patient som diagnosen gäller – identifieras med personnummer eller samordningsnummer (SEEHDSPatient)"
 * subject.identifier 1..1 MS
 * subject.identifier ^short = "Patientidentifierare (personnummer eller samordningsnummer)"
 * subject.identifier.system 1..1 MS
@@ -85,3 +83,11 @@ Profilen säkerställer att:
 
 * recordedDate MS
 * recordedDate ^short = "Registreringsdatum, mappat från diagnosisHeader.documentTime (YYYYMMDDHHMMSS → ISO 8601)"
+
+* recorder MS
+* recorder only Reference($seBasePractitionerRole)
+* recorder ^short = "Ansvarig hälso- och sjukvårdspersonal (accountableHealthcareProfessional från RIVTA) – SEBasePractitionerRole med HSA-id i identifier[hsaid]"
+
+* asserter MS
+* asserter only Reference($seBasePractitionerRole)
+* asserter ^short = "Rättslig äkthetsintygsgivare (legalAuthenticator från RIVTA) – SEBasePractitionerRole med HSA-id i identifier[hsaid]; datum i extension[assertedDate]"
