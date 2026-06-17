@@ -1,7 +1,7 @@
-Instance: IneraPatientExample
-InstanceOf: IneraPatient
-Title: "Inera Patient Example"
-Description: "A minimal example of a patient conforming to the IneraPatient profile."
+Instance: SEEHDSPatientExample
+InstanceOf: SEEHDSPatient
+Title: "SE EHDS Patient Example"
+Description: "Minimalt exempel på en patient som uppfyller SEEHDSPatient-profilen."
 Usage: #example
 
 * identifier[personnummer].system = "http://electronichealth.se/identifier/personnummer"
@@ -14,9 +14,3 @@ Usage: #example
 * gender = #female
 
 * birthDate = "1950-01-01"
-
-* address.use = #home
-* address.line[0] = "Testgatan 1"
-* address.postalCode = "11122"
-* address.city = "Stockholm"
-* address.country = "SE"

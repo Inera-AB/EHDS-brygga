@@ -2,6 +2,12 @@
 Alias: $ipsCondition = http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips
 Alias: $ipsPatient = http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips
 
+// Svenska basprofiler (HL7 Sweden basprofiler-r4, hl7se.fhir.base)
+Alias: $seBasePatient = http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePatient
+Alias: $seBasePractitionerRole = http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitionerRole
+Alias: $seBasePractitioner = http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitioner
+Alias: $seBaseOrganization = http://hl7.se/fhir/ig/base/StructureDefinition/SEBaseOrganization
+
 // EURIDICE/EHDS canonical base (EU EHDS IG)
 Alias: $euCondition = https://hl7.eu/fhir/ehds/StructureDefinition/Condition-eu-ehds
 Alias: $euDocumentReference = https://hl7.eu/fhir/ehds/StructureDefinition/DocumentReference-eu-ehds

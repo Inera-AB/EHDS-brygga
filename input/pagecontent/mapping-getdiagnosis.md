@@ -13,8 +13,8 @@ EHDS-bryggan mappar svarsmeddelandet från detta tjänstekontrakt till FHIR R4-r
 
 | RIVTA-element | FHIR-element | Kommentar |
 |---|---|---|
-| `diagnosisHeader.patientId.extension` | `Condition.subject.identifier.value` | Personnummer eller samordningsnummer |
-| `diagnosisHeader.patientId.root` | `Condition.subject.identifier.system` | OID konverteras till URN, se tabell nedan |
+| `diagnosisHeader.patientId.extension` | `Condition.subject.identifier.value` | Personnummer eller samordningsnummer – subject är SEBasePatient |
+| `diagnosisHeader.patientId.root` | `Condition.subject.identifier.system` | OID konverteras till URI, se tabell nedan |
 | `diagnosisHeader.sourceSystemHSAId` | `Condition.meta.source` | Källsystemets HSA-id som URI (urn:oid:{OID}#{hsaId}) |
 | `diagnosisHeader.documentTime` | `Condition.recordedDate` | Format YYYYMMDDHHMMSS → ISO 8601 |
 | `diagnosisBody.diagnosisCode.code` | `Condition.code.coding.code` | ICD-10-SE kod, t.ex. `J18.9` |

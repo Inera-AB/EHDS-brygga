@@ -23,6 +23,7 @@ dependencies:
   hl7.fhir.uv.ips: current
   hl7.fhir.eu.eps: current
   hl7.fhir.eu.health-data-api: current
+  hl7se.fhir.base: 1.1.0
 
 pages:
   index.md:
