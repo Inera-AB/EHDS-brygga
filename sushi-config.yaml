@@ -1,41 +1,51 @@
-id: inera.core.template
-canonical: https://fhir.inera.se/ig/template
-name: IneraCoreTemplate
-title: "Inera FHIR Implementation Guide Template"
-description: "Template Implementation Guide for Inera FHIR IGs, demonstrating structure and governance conventions."
+id: se.ehds.brygga
+canonical: https://ehds-brygga.inera.se/fhir
+name: SEEHDSBrygga
+title: "SE EHDS Brygga Implementation Guide"
+description: >
+  Implementation Guide för EHDS-bryggan. Definierar FHIR-profiler och mappningar
+  för konvertering av Ineras RIVTA-tjänstekontrakt till FHIR R4.
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
 copyrightYear: 2024+
 releaseLabel: ci-build
-license: CC0-1.0
 
 publisher:
   name: Inera AB
   url: https://www.inera.se
+  email: oskar.thunman@inera.se
 
 jurisdiction: urn:iso:std:iso:3166#SE "Sweden"
+language: sv
 
-parameters:
-  show-inherited-invariants: false
-  usage-stats-opt-out: true
+dependencies:
+  hl7.fhir.uv.ips: current        # International Patient Summary – basis för EURIDICE
+  hl7.fhir.eu.eps: current        # HL7 Europe Patient Summary (EPS) – condition-obl-eu-eps
+  hl7.fhir.eu.health-data-api: current  # EU Health Data API – Resource Access Provider capability
 
 pages:
   index.md:
-    title: Introduction
-  workflow.md:
-    title: Workflow
-  logical-models.md:
-    title: Logical Models
-  mappings.md:
-    title: Mappings
-  profiles.md:
-    title: Profiles
-  terminology.md:
-    title: Terminology
-  examples.md:
-    title: Examples
+    title: Hem
+  mapping-getdiagnosis.md:
+    title: "Mappning: GetDiagnosis → Condition"
+  mapping-getdocumentlist.md:
+    title: "Mappning: GetDocumentList → DocumentReference"
+  naming-systems.md:
+    title: "OID-till-URI-mappningar"
+  architecture.md:
+    title: Arkitektur
   downloads.md:
-    title: Downloads
-  version-history.md:
-    title: Version History
+    title: Nedladdningar
+  artifacts.html:
+    title: Artefakter
+
+menu:
+  Hem: index.html
+  Mappningar:
+    "GetDiagnosis → Condition": mapping-getdiagnosis.html
+    "GetDocumentList → DocumentReference": mapping-getdocumentlist.html
+  "OID-mappningar": naming-systems.html
+  Arkitektur: architecture.html
+  Artefakter: artifacts.html
+  Nedladdningar: downloads.html
