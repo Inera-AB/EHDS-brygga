@@ -6,7 +6,7 @@ ValueSet som kombinerar standard-FHIR condition-category-koder med svenska diagn
 från DiagnosisTypeCS. Används i Condition.category för att ange diagnostyp enligt
 Ineras RIVTA-tjänstekontrakt GetDiagnosis.
 """
-* ^url = "https://ehds-brygga.inera.se/fhir/ValueSet/SEDiagnosisType"
+* ^url = "https://fhir.inera.se/ValueSet/SEDiagnosisType"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^experimental = true
@@ -16,4 +16,4 @@ Ineras RIVTA-tjänstekontrakt GetDiagnosis.
 * $conditionCategory#encounter-diagnosis "Encounter Diagnosis"
 
 // Svenska diagnostyper
-* include codes from system https://ehds-brygga.inera.se/fhir/CodeSystem/DiagnosisType
+* include codes from system https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp
