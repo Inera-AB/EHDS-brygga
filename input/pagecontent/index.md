@@ -55,7 +55,7 @@ konfigurationsdrivna och nya tjänstekontrakt kan läggas till utan kodändringa
 ## Teknisk information
 
 - **FHIR-version:** R4 (4.0.1)
-- **Canonical URL:** `https://ehds-brygga.inera.se/fhir`
+- **Canonical URL:** `https://fhir.inera.se/ig/EHDS-brygga`
 - **Utgivare:** Inera AB
 - **Kontakt:** ehds@inera.se
 - **Status:** Draft (ci-build)
