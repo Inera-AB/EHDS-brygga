@@ -1,21 +1,44 @@
-# Downloads
+# Nedladdningar
 
-The following downloads are available for this Implementation Guide.
+## FHIR NPM-paket
 
-### Full IG package
+EHDS-brygga IG publiceras som ett FHIR NPM-paket och kan installeras i
+FHIR-verktyg som Simplifier, IG Publisher och fsh-sushi.
 
-The full npm package for this IG, for use with the FHIR validator and other tooling:
+| Paket | Version | Nedladdning |
+|---|---|---|
+| `se.ehds.brygga` | 0.1.0 | [package.tgz](package.tgz) |
 
-- [Package (tgz)](package.tgz)
-
-### Validator setup
-
-To validate instances against profiles in this IG, use the [HL7 FHIR Validator](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator) with the package above:
+### Installation med FHIR NPM-klienten
 
 ```
-java -jar validator_cli.jar <instance.json> -ig inera.core.template#0.1.0
+fhir install se.ehds.brygga --here
 ```
 
----
+### Innehåll i paketet
 
-> **Guidance for authors:** Add links to any additional artefacts relevant to your IG, such as example collections, mapping spreadsheets, or integration guides.
+| Resurstyp | Antal | Beskrivning |
+|---|---|---|
+| StructureDefinition (profiler) | 2 | SEEHDSCondition, SEEHDSDocumentReference |
+| StructureDefinition (extensions) | 1 | ext-asserted-date |
+| NamingSystem | 12 | OID↔URI-mappningar, se [OID-till-URI-mappningar](naming-systems.html) |
+| CodeSystem | 1 | DiagnosisType (HD/BY) |
+| ValueSet | 1 | SEDiagnosisType |
+| ConceptMap | 1 | DiagnosisTypeToCategoryMap |
+
+### Använda paketet lokalt med IG Publisher
+
+Lägg paketet i din lokala FHIR-cache:
+
+```
+mkdir -p ~/.fhir/packages/se.ehds.brygga#0.1.0
+tar -xzf package.tgz -C ~/.fhir/packages/se.ehds.brygga#0.1.0
+```
+
+IG Publisher och SUSHI hittar sedan paketet automatiskt när det refereras som
+`se.ehds.brygga: 0.1.0` i `sushi-config.yaml` eller `package.json`.
+
+## Källkod
+
+Källkoden för EHDS-bryggan (bridge, IG, mocks) finns på
+[GitHub (oskthu2/EHDS-brygga)](https://github.com/oskthu2/EHDS-brygga).
