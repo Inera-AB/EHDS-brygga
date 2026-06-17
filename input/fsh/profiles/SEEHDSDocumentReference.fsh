@@ -34,8 +34,8 @@ och säkerställer att:
 * type.text ^short = "Fritext dokumenttyp (typeCode.originalText från RIVTA); används om displayName saknas"
 
 * subject 1..1 MS
-* subject only Reference($seBasePatient)
-* subject ^short = "Patient som dokumentet gäller – identifieras med personnummer eller samordningsnummer (SEBasePatient)"
+* subject only Reference($seEhdsPatient)
+* subject ^short = "Patient som dokumentet gäller – identifieras med personnummer eller samordningsnummer (SEEHDSPatient)"
 * subject.identifier 1..1 MS
 * subject.identifier.system 1..1 MS
 * subject.identifier.value 1..1 MS

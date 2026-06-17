@@ -64,8 +64,8 @@ Profilen säkerställer att:
 * code.coding[ICD10SE].display ^short = "Klartext för diagnosen, t.ex. Pneumoni, ospecificerad"
 
 * subject 1..1 MS
-* subject only Reference($seBasePatient)
-* subject ^short = "Patient som diagnosen gäller – identifieras med personnummer eller samordningsnummer (SEBasePatient)"
+* subject only Reference($seEhdsPatient)
+* subject ^short = "Patient som diagnosen gäller – identifieras med personnummer eller samordningsnummer (SEEHDSPatient)"
 * subject.identifier 1..1 MS
 * subject.identifier ^short = "Patientidentifierare (personnummer eller samordningsnummer)"
 * subject.identifier.system 1..1 MS

@@ -8,6 +8,9 @@ Alias: $seBasePractitionerRole = http://hl7.se/fhir/ig/base/StructureDefinition/
 Alias: $seBasePractitioner = http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePractitioner
 Alias: $seBaseOrganization = http://hl7.se/fhir/ig/base/StructureDefinition/SEBaseOrganization
 
+// EHDS-brygga egna profiler
+Alias: $seEhdsPatient = https://fhir.inera.se/StructureDefinition/se-ehds-patient
+
 // EURIDICE/EHDS canonical base (EU EHDS IG)
 Alias: $euCondition = https://hl7.eu/fhir/ehds/StructureDefinition/Condition-eu-ehds
 Alias: $euDocumentReference = https://hl7.eu/fhir/ehds/StructureDefinition/DocumentReference-eu-ehds

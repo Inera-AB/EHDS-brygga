@@ -1,5 +1,5 @@
 Instance: SEEHDSPatientExample
-InstanceOf: SEEHDSPatient
+InstanceOf: se-ehds-patient
 Title: "SE EHDS Patient Example"
 Description: "Minimalt exempel på en patient som uppfyller SEEHDSPatient-profilen."
 Usage: #example
