@@ -85,3 +85,21 @@ Profilen säkerställer att:
 
 * recordedDate MS
 * recordedDate ^short = "Registreringsdatum, mappat från diagnosisHeader.documentTime (YYYYMMDDHHMMSS → ISO 8601)"
+
+* recorder MS
+* recorder only Reference(PractitionerRole)
+* recorder ^short = "Ansvarig hälso- och sjukvårdspersonal (accountableHealthcareProfessional från RIVTA), representerad som PractitionerRole med logisk HSA-id-referens"
+* recorder.identifier MS
+* recorder.identifier.system 1..1 MS
+* recorder.identifier.system ^short = "HSA-id-system: urn:oid:1.2.752.129.2.1.4.1 (Inera NTjP) eller urn:oid:1.2.752.29.4.19 (HL7 Sweden basprofiler)"
+* recorder.identifier.value 1..1 MS
+* recorder.identifier.value ^short = "HSA-id för den ansvariga hälso- och sjukvårdspersonalen"
+
+* asserter MS
+* asserter only Reference(PractitionerRole)
+* asserter ^short = "Rättslig äkthetsintygsgivare (legalAuthenticator från RIVTA), representerad som PractitionerRole med logisk HSA-id-referens"
+* asserter.identifier MS
+* asserter.identifier.system 1..1 MS
+* asserter.identifier.system ^short = "HSA-id-system: urn:oid:1.2.752.129.2.1.4.1 (Inera NTjP) eller urn:oid:1.2.752.29.4.19 (HL7 Sweden basprofiler)"
+* asserter.identifier.value 1..1 MS
+* asserter.identifier.value ^short = "HSA-id för den rättsliga äkthetsintygsgivaren"
