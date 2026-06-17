@@ -6,10 +6,10 @@ Kodsystem för svenska diagnosklassifikationer som inte täcks av FHIR-standarde
 Används för att ange om en diagnos är huvud- eller bidiagnos enligt svenska journalsystem
 och Ineras RIVTA-tjänstekontrakt.
 """
-* ^url = "https://ehds-brygga.inera.se/fhir/CodeSystem/DiagnosisType"
-* ^version = "0.1.0"
+* ^url = https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"
+* ^version = "1.1.0"
 * ^status = #draft
-* ^experimental = true
+* ^experimental = false
 * ^caseSensitive = true
 * ^content = #complete
 
