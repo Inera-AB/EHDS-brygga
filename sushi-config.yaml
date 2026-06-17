@@ -1,7 +1,7 @@
-id: se.ehds.brygga
-canonical: https://fhir.inera.se
-name: SEEHDSBrygga
-title: "SE EHDS Brygga Implementation Guide"
+id: IneraEHDSBrygga
+canonical: https://fhir.inera.se/ig/EHDS-brygga
+name: IneraEHDSBrygga
+title: "Inera EHDS Brygga Implementation Guide"
 description: >
   Implementation Guide för EHDS-bryggan. Definierar FHIR-profiler och mappningar
   för konvertering av Ineras RIVTA-tjänstekontrakt till FHIR R4.

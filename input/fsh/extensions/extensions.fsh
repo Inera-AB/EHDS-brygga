@@ -6,6 +6,7 @@ Administrativt datum när diagnosen registrerades kliniskt (author-time).
 Mappas från EPS-extensionen extension:assertedDate i GetDiagnosis.
 Skiljer sig från recordedDate (systemtidsstämpel) och onsetDateTime (klinisk debut).
 """
+* ^url = "https://fhir.inera.se/StructureDefinition/ext-asserted-date"
 * ^version = "0.1.0"
 * ^status = #draft
 * ^experimental = true
