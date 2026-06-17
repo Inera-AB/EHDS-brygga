@@ -1,5 +1,5 @@
 id: se.ehds.brygga
-canonical: https://ehds-brygga.inera.se/fhir
+canonical: https://fhir.inera.se
 name: SEEHDSBrygga
 title: "SE EHDS Brygga Implementation Guide"
 description: >
@@ -20,9 +20,9 @@ jurisdiction: urn:iso:std:iso:3166#SE "Sweden"
 language: sv
 
 dependencies:
-  hl7.fhir.uv.ips: current        # International Patient Summary – basis för EURIDICE
-  hl7.fhir.eu.eps: current        # HL7 Europe Patient Summary (EPS) – condition-obl-eu-eps
-  hl7.fhir.eu.health-data-api: current  # EU Health Data API – Resource Access Provider capability
+  hl7.fhir.uv.ips: current
+  hl7.fhir.eu.eps: current
+  hl7.fhir.eu.health-data-api: current
 
 pages:
   index.md:
@@ -40,12 +40,3 @@ pages:
   artifacts.html:
     title: Artefakter
 
-menu:
-  Hem: index.html
-  Mappningar:
-    "GetDiagnosis → Condition": mapping-getdiagnosis.html
-    "GetDocumentList → DocumentReference": mapping-getdocumentlist.html
-  "OID-mappningar": naming-systems.html
-  Arkitektur: architecture.html
-  Artefakter: artifacts.html
-  Nedladdningar: downloads.html

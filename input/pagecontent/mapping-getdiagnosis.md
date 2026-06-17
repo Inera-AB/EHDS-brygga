@@ -21,8 +21,8 @@ EHDS-bryggan mappar svarsmeddelandet från detta tjänstekontrakt till FHIR R4-r
 | `diagnosisBody.diagnosisCode.codeSystem` | `Condition.code.coding.system` | OID `1.2.752.116.1.1.1.1.3` → `https://www.icd10.se/` |
 | `diagnosisBody.diagnosisCode.displayName` | `Condition.code.coding.display` | Kodverkets officiella benämning |
 | `diagnosisBody.diagnosisCode.originalText` | `Condition.code.text` | Fritext från källsystemet; om saknad används `displayName` som fallback |
-| `diagnosisBody.diagnosisType` (HD) | `Condition.category` = `encounter-diagnosis` | Huvuddiagnos → FHIR standard-kod |
-| `diagnosisBody.diagnosisType` (BY) | `Condition.category` = `bi-diagnos` | Bidiagnos → svensk tilläggskod |
+| `diagnosisBody.diagnosisType` (HD) | `Condition.category[diagnostyp]` = `HD` (kv_diagnostyp) | Huvuddiagnos → Ineras kv_diagnostyp-kod |
+| `diagnosisBody.diagnosisType` (BY) | `Condition.category[diagnostyp]` = `BY` (kv_diagnostyp) | Bidiagnos → Ineras kv_diagnostyp-kod |
 | `diagnosisBody.diagnosisTimePeriod.start` | `Condition.onsetDateTime` | Format YYYYMMDD → YYYY-MM-DD |
 | `diagnosisBody.diagnosisTimePeriod.end` | `Condition.abatementDateTime` | Om satt: resolved, annars active |
 | `diagnosisHeader.careProviderHSAId` | `Provenance.agent[custodian]` | Juridiskt ansvarig vårdgivare – används för Sparr |
@@ -37,7 +37,7 @@ Varje producerad Condition bär **två profiler** i `meta.profile`:
 
 | Profil | URL | Syfte |
 |---|---|---|
-| SEEHDSCondition | `https://ehds-brygga.inera.se/fhir/StructureDefinition/se-ehds-condition` | Bryggornas nationella RIVTA-mappningsprofil |
+| SEEHDSCondition | `https://fhir.inera.se/StructureDefinition/se-ehds-condition` | Bryggornas nationella RIVTA-mappningsprofil |
 | condition-obl-eu-eps | `http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps` | EU EPS obligations-profil (hl7.fhir.eu.eps) |
 
 EU EPS-profilen (`condition-obl-eu-eps`) är en *obligations*-profil på toppen av IPS Condition
@@ -96,15 +96,17 @@ RIVTA-koden för diagnostyp (`diagnosisType`) används för att sätta `Conditio
 Se även [ConceptMap DiagnosisTypeToCategoryMap](ConceptMap-DiagnosisTypeToCategoryMap.html)
 för den fullständiga mappningen.
 
-| RIVTA diagnosisType | Kod | System | FHIR category-kod |
+| RIVTA diagnosisType | Kod | System | FHIR category[diagnostyp]-kod |
 |---|---|---|---|
-| `HD` – Huvuddiagnos | `encounter-diagnosis` | `http://terminology.hl7.org/CodeSystem/condition-category` | Standard FHIR-kod |
-| `BY` – Bidiagnos | `bi-diagnos` | `https://ehds-brygga.inera.se/fhir/CodeSystem/DiagnosisType` | Svensk tilläggskod |
-| *(okänd kod)* | `problem-list-item` | `http://terminology.hl7.org/CodeSystem/condition-category` | Fallback-kod |
+| `HD` – Huvuddiagnos | `HD` | `https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp` | Ineras kv_diagnostyp |
+| `BY` – Bidiagnos | `BY` | `https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp` | Ineras kv_diagnostyp |
 
-**Fallback:** Om `diagnosisType` saknar en känd mappning i `ConceptMapRegistry` sätts
-`category` till `problem-list-item` (standard FHIR) och ett varningssvar loggas.
-En okänd kod kastas aldrig bort — Condition inkluderas alltid i svaret.
+Profilen kräver exakt ett `category[diagnostyp]`-snitt med en kod från Ineras kodverk `kv_diagnostyp`.
+Ytterligare `category`-poster (t.ex. `encounter-diagnosis` från standard-FHIR) kan läggas till av konsumenten
+men hanteras inte av denna profil.
+
+**Fallback:** Om `diagnosisType` saknar en känd mappning i `ConceptMapRegistry` loggas ett varningsmeddelande.
+Condition inkluderas alltid i svaret.
 
 ## Datumsformat
 
@@ -155,7 +157,7 @@ svensk tid (Europe/Stockholm) och konverterar till UTC vid behov.
   "meta": {
     "source": "urn:oid:1.2.752.129.2.1.4.1#SE2321000016-4HK5",
     "profile": [
-      "https://ehds-brygga.inera.se/fhir/StructureDefinition/se-ehds-condition"
+      "https://fhir.inera.se/StructureDefinition/se-ehds-condition"
     ]
   },
   "clinicalStatus": {
@@ -180,9 +182,9 @@ svensk tid (Europe/Stockholm) och konverterar till UTC vid behov.
     {
       "coding": [
         {
-          "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-          "code": "encounter-diagnosis",
-          "display": "Encounter Diagnosis"
+          "system": "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp",
+          "code": "HD",
+          "display": "Huvuddiagnos"
         }
       ]
     }
@@ -210,7 +212,7 @@ svensk tid (Europe/Stockholm) och konverterar till UTC vid behov.
 ### Förklaring av mappningen i exemplet
 
 - `clinicalStatus = active` – inget slutdatum i `diagnosisTimePeriod`, så diagnosen är fortfarande aktiv
-- `category = encounter-diagnosis` – `diagnosisType = HD` (Huvuddiagnos) mappas till standard-FHIR-koden
+- `category[diagnostyp].coding.code = HD` – `diagnosisType = HD` (Huvuddiagnos) mappas direkt till Ineras kv_diagnostyp-kod
 - `code.coding.system = https://www.icd10.se/` – OID `1.2.752.116.1.1.1.1.3` konverteras till ICD-10-SE URI
 - `subject.identifier.system = http://electronichealth.se/identifier/personnummer` – OID `1.2.752.129.2.1.3.1` konverteras till kanonisk URI (HL7 Sweden basprofiler)
 - `recordedDate` – `20230601120000` konverteras till `2023-06-01T12:00:00`

@@ -11,12 +11,10 @@ Mappas från Ineras RIVTA-tjänstekontrakt GetDiagnosis
 Profilen säkerställer att:
 - Diagnoskod (ICD-10-SE) är angiven
 - Patient är identifierad med personnummer eller samordningsnummer
-- Diagnostyp (huvud-/bidiagnos) är angiven
+- Diagnostyp (HD/BY) är angiven som ett namngivet snitt i category
 - Källsystem identifieras via meta.source (urn:oid:{HSA_OID}#{hsaId})
 - Ansvarig vårdgivare bärs av Provenance.agent[role=custodian] (inte inne i resursen)
 """
-
-* ^url = "https://ehds-brygga.inera.se/fhir/StructureDefinition/se-ehds-condition"
 
 // EURIDICE/EHDS alignment: markera att denna profil implementerar EU EHDS Condition
 * ^baseDefinition = "http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"
@@ -40,8 +38,13 @@ Profilen säkerställer att:
 * verificationStatus from $conditionVerStatus (required)
 
 * category 1..* MS
-* category ^short = "Diagnostyp (HD=Huvuddiagnos → encounter-diagnosis, BY=Bidiagnos → bi-diagnos)"
-* category from https://ehds-brygga.inera.se/fhir/ValueSet/SEDiagnosisType (extensible)
+* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.path = "coding.system"
+* category ^slicing.rules = #open
+* category ^short = "Diagnostyp: måste innehålla minst ett snitt med kod från Ineras kv_diagnostyp"
+* category contains diagnostyp 1..1 MS
+* category[diagnostyp] ^short = "Diagnostyp (HD=Huvuddiagnos, BY=Bidiagnos) från Ineras terminologitjänst"
+* category[diagnostyp] from SEDiagnosisTypeVS (required)
 
 * code 1..1 MS
 * code ^short = "Diagnoskod (t.ex. ICD-10-SE)"
@@ -82,4 +85,3 @@ Profilen säkerställer att:
 
 * recordedDate MS
 * recordedDate ^short = "Registreringsdatum, mappat från diagnosisHeader.documentTime (YYYYMMDDHHMMSS → ISO 8601)"
-

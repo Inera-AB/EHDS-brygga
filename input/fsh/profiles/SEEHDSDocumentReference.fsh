@@ -16,8 +16,6 @@ och säkerställer att:
 - Ansvarig vårdgivare bärs av Provenance.agent[role=custodian] (inte inne i resursen)
 """
 
-* ^url = "https://ehds-brygga.inera.se/fhir/StructureDefinition/se-ehds-document-reference"
-
 * meta.source MS
 * meta.source ^short = "HSA-id för källsystemet, format: urn:oid:1.2.752.129.2.1.4.1#{hsaId}"
 
