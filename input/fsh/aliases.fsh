@@ -12,6 +12,9 @@ Alias: $epsConditionObl = http://hl7.eu/fhir/eps/StructureDefinition/condition-o
 // Terminologi
 Alias: $iheDocType = http://ihe.net/connectathon/classCodes
 
+// Inera terminologitjänst
+Alias: $diagnosisTypeCS = https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp
+
 // External code system aliases
 Alias: $conditionClinical = http://terminology.hl7.org/CodeSystem/condition-clinical
 Alias: $conditionVerStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status
