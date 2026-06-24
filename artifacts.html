@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Artefakter - SE EHDS Brygga Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"7"}
+    h3,h4,h5,h6{--heading-prefix:"7.0"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">SE EHDS Brygga Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis → Condition</a></li>
+                <li><a href="mapping-getdocumentlist.html">GetDocumentList → DocumentReference</a></li>
+              </ul>
+            </li>
+            <li><a href="naming-systems.html">OID-mappningar</a></li>
+            <li><a href="architecture.html">Arkitektur</a></li>
+            <li><a href="artifacts.html">Artefakter</a></li>
+            <li><a href="downloads.html">Nedladdningar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Artefakter</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">SE EHDS Brygga Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>Artefakter</h2>
+  
+  
+  
+  <!--DO NOT EDIT THIS FILE - It is generated by https://github.com/HL7/ig-template-base/blob/master/scripts/createArtifactSummary.xslt and any changes made will be overwritten--><div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     class="markdown-toc">
+   <p>Contents:</p>
+   <ul>
+      <li>
+         <a href="#1">Structures: Resource Profiles</a>
+      </li>
+      <li>
+         <a href="#2">Structures: Extension Definitions</a>
+      </li>
+      <li>
+         <a href="#3">Terminology: Value Sets</a>
+      </li>
+      <li>
+         <a href="#4">Terminology: Code Systems</a>
+      </li>
+      <li>
+         <a href="#5">Terminology: Naming Systems</a>
+      </li>
+      <li>
+         <a href="#6">Terminology: Concept Maps</a>
+      </li>
+      <li>
+         <a href="#7">Example: Example Instances</a>
+      </li>
+   </ul>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://hl7.org/fhir"
+     xmlns:html="http://www.w3.org/1999/xhtml">
+   <p>This page provides a list of the FHIR artifacts defined as part of this implementation guide.</p>
+   <a name="1"> </a>
+   <h3>Structures: Resource Profiles </h3>
+    <p>These define constraints on FHIR resources for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-se-ehds-condition.html"
+                  title="StructureDefinition/se-ehds-condition">SE EHDS Condition</a>
+            </td>
+            <td>
+<p>FHIR Condition-profil för EHDS-bryggan, alignad med IPS (International Patient Summary)
+och EURIDICE/EHDS EU-specifikationer.
+Mappas från Ineras RIVTA-tjänstekontrakt GetDiagnosis
+(clinicalprocess:activity:conditions:GetDiagnosis:2).</p>
+
+<p>Profilen säkerställer att:</p>
+<ul>
+  <li>Diagnoskod (ICD-10-SE) är angiven</li>
+  <li>Patient är identifierad med personnummer eller samordningsnummer (SEBasePatient)</li>
+  <li>Diagnostyp (HD/BY) är angiven som ett namngivet snitt i category</li>
+  <li>Källsystem identifieras via meta.source (urn:oid:{HSA_OID}#{hsaId})</li>
+  <li>Ansvarig hälso- och sjukvårdspersonal anges som recorder (SEBasePractitionerRole)</li>
+  <li>Rättslig äkthetsintygsgivare anges som asserter (SEBasePractitionerRole)</li>
+  <li>Ansvarig vårdgivare bärs av Provenance.agent[role=custodian] (inte inne i resursen)</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-se-ehds-document-reference.html"
+                  title="StructureDefinition/se-ehds-document-reference">SE EHDS DocumentReference</a>
+            </td>
+            <td>
+<p>FHIR DocumentReference-profil för EHDS-bryggan.
+Mappas från Ineras RIVTA-tjänstekontrakt GetDocumentList
+(clinicalprocess:healthrecord:GetDocumentList:1).</p>
+
+<p>Profilen alignar med EURIDICE/EHDS EU-specifikationer för kliniska dokument
+och säkerställer att:</p>
+<ul>
+  <li>Dokumentidentifierare (documentId) är angiven som masterIdentifier</li>
+  <li>Dokumenttyp (LOINC) är angiven</li>
+  <li>Patient är identifierad med personnummer eller samordningsnummer (SEBasePatient)</li>
+  <li>Källsystem identifieras via meta.source (urn:oid:{HSA_OID}#{hsaId})</li>
+  <li>Ansvarig hälso- och sjukvårdspersonal (accountableHealthcareProfessional) är angiven som author (SEBasePractitionerRole)</li>
+  <li>Rättslig äkthetsintygsgivare (legalAuthenticator) är angiven som authenticator (SEBasePractitionerRole)</li>
+  <li>Ansvarig vårdgivare bärs av Provenance.agent[role=custodian] (inte inne i resursen)</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-se-ehds-patient.html"
+                  title="StructureDefinition/se-ehds-patient">SE EHDS Patient</a>
+            </td>
+            <td>
+<p>FHIR Patient-profil för EHDS-bryggan, byggd ovanpå IPS Patient (Patient-uv-ips).
+Lägger till svenska identifier-slicar för personnummer, samordningsnummer och
+nationelltReservnummer i enlighet med HL7 Sweden basprofiler (SEBasePatient).
+Används som subject i SEEHDSCondition och SEEHDSDocumentReference.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="2"> </a>
+   <h3>Structures: Extension Definitions </h3>
+    <p>These define constraints on FHIR data types for systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-ext-asserted-date.html"
+                  title="StructureDefinition/ext-asserted-date">Asserted Date</a>
+            </td>
+            <td>
+<p>Administrativt datum när diagnosen registrerades kliniskt (author-time).
+Mappas från EPS-extensionen extension:assertedDate i GetDiagnosis.
+Skiljer sig från recordedDate (systemtidsstämpel) och onsetDateTime (klinisk debut).</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="3"> </a>
+   <h3>Terminology: Value Sets </h3>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ValueSet-SEDiagnosisType.html" title="ValueSet/SEDiagnosisType">SE Diagnos Typ</a>
+            </td>
+            <td>
+<p>ValueSet med Ineras diagnostyper (HD/BY) från kv_diagnostyp på terminologitjänsten.
+Används i Condition.category[diagnostyp] för att ange diagnostyp enligt
+Ineras RIVTA-tjänstekontrakt GetDiagnosis:2.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="4"> </a>
+   <h3>Terminology: Code Systems </h3>
+    <p>These define new code systems used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="CodeSystem-DiagnosisTypeCS.html"
+                  title="CodeSystem/DiagnosisTypeCS">Diagnos Typ (kv_diagnostyp)</a>
+            </td>
+            <td>
+<p>Ineras kodverk för diagnostyp (kv_diagnostyp) hämtat från terminologitjänsten.
+Anger om en diagnos är huvud- eller bidiagnos enligt Ineras RIVTA-tjänstekontrakt GetDiagnosis:2.
+Koderna HD och BY används direkt som värden i FHIR Condition.category.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="5"> </a>
+   <h3>Terminology: Naming Systems </h3>
+    <p>These define identifier and/or code system identities used by systems conforming to this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsForskrivarkod.html"
+                  title="NamingSystem/NsForskrivarkod">Förskrivarkod (Socialstyrelsen)</a>
+            </td>
+            <td>
+<p>Förskrivarkod (OID 1.2.752.116.3.1.2) utfärdat av Socialstyrelsen. Identifierar förskrivare av läkemedel. Förekommer i Provenance-resurser.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsHospYrken.html" title="NamingSystem/NsHospYrken">HOSP-yrken (Socialstyrelsen)</a>
+            </td>
+            <td>
+<p>Klassifikation av yrkeskategorier i hälso- och sjukvård (OID 1.2.752.116.3.1.3) från Socialstyrelsens HOSP-register. Förekommer i RIVTA-svar som professionskod.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsHsaIdBasprofil.html"
+                  title="NamingSystem/NsHsaIdBasprofil">HSA-id (HL7 Sweden basprofiler)</a>
+            </td>
+            <td>
+<p>HSA-identifierare (OID 1.2.752.29.4.19) i HL7 Sweden basprofiler-r4. Alternativ OID för samma identifierarespace som 1.2.752.129.2.1.4.1. Bevaras som urn:oid: eftersom ingen kanonisk URI finns.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsHsaIdInera.html" title="NamingSystem/NsHsaIdInera">HSA-id (Inera NTjP/RIVTA)</a>
+            </td>
+            <td>
+<p>HSA-identifierare (OID 1.2.752.129.2.1.4.1) i Ineras RIVTA-profil och NTjP. Används för sourceSystemHSAId, careProviderHSAId och careUnitHSAId i RIVTA-svar. Bevaras som urn:oid: eftersom ingen kanonisk URI finns.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsIcd10International.html"
+                  title="NamingSystem/NsIcd10International">ICD-10 (International)</a>
+            </td>
+            <td>
+<p>ICD-10 internationell version (OID 2.16.840.1.113883.6.3) utgiven av WHO. Används när diagnoskodsystemets OID inte är det svenska (1.2.752.116.1.1.1.1.3).</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsIcd10Se.html" title="NamingSystem/NsIcd10Se">ICD-10-SE</a>
+            </td>
+            <td>
+<p>ICD-10-SE (OID 1.2.752.116.1.1.1.1.3) – det svenska tillägget till ICD-10, utgivet av Socialstyrelsen. Primärt diagnoskodsystem i RIVTA GetDiagnosis:2.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsKva.html" title="NamingSystem/NsKva">KVÅ – Klassifikation av vårdåtgärder</a>
+            </td>
+            <td>
+<p>KVÅ (OID 1.2.752.116.1.1.1.1.1) – Socialstyrelsens klassifikation av åtgärder. Kan förekomma i RIVTA-svar som kompletterande kodsystem.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsLegitimationsnummer.html"
+                  title="NamingSystem/NsLegitimationsnummer">Legitimationsnummer (Socialstyrelsen)</a>
+            </td>
+            <td>
+<p>Legitimationsnummer (OID 1.2.752.116.3.1.1) utfärdat av Socialstyrelsen för legitimerade yrkesgrupper inom hälso- och sjukvård. Förekommer i Provenance-resurser för vård- och behandlingsansvariga.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsPersonnummer.html"
+                  title="NamingSystem/NsPersonnummer">Personnummer</a>
+            </td>
+            <td>
+<p>Nationellt personnummer (OID 1.2.752.129.2.1.3.1) utfärdat av Skatteverket. Kanonisk URI enligt HL7 Sweden basprofiler-r4.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsSnomedCt.html" title="NamingSystem/NsSnomedCt">SNOMED CT</a>
+            </td>
+            <td>
+<p>SNOMED Clinical Terms (OID 2.16.840.1.113883.6.96). Kan förekomma som kodsystem i RIVTA-svar om producenten kodar med SNOMED CT.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsSosnyk.html" title="NamingSystem/NsSosnyk">SOSNYK – yrkeskategorier (Socialstyrelsen)</a>
+            </td>
+            <td>
+<p>SOSNYK – Socialstyrelsens klassifikation av yrkeskategorier (OID 1.2.752.116.1.3.6). Förekommer i RIVTA-svar som professionskod och i HSA-katalogens yrkesklassificering.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="NamingSystem-NsSamordningsnummer.html"
+                  title="NamingSystem/NsSamordningsnummer">Samordningsnummer</a>
+            </td>
+            <td>
+<p>Samordningsnummer (OID 1.2.752.129.2.1.3.3) utfärdat av Skatteverket. Kanonisk URI enligt HL7 Sweden basprofiler-r4.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="6"> </a>
+   <h3>Terminology: Concept Maps </h3>
+    <p>These define transformations to convert between codes by systems conforming with this implementation guide.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-DiagnosisTypeToCategoryMap.html"
+                  title="ConceptMap/DiagnosisTypeToCategoryMap">DiagnosisType → Condition.category</a>
+            </td>
+            <td>
+<p>Mappning av RIVTA diagnosisType (HD/BY) från kv_diagnostyp till FHIR Condition.category[diagnostyp]</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+   <a name="7"> </a>
+   <h3>Example: Example Instances </h3>
+    <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
+<table class="grid">
+      <col style="width:20%"/>
+      <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-SEEHDSPatientExample.html"
+                  title="Patient/SEEHDSPatientExample">SE EHDS Patient Example</a>
+            </td>
+            <td>
+<p>Minimalt exempel på en patient som uppfyller SEEHDSPatient-profilen.</p>
+</td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package se.ehds.brygga#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 18:55+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

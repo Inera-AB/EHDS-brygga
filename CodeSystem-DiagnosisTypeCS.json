@@ -1,0 +1,47 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "DiagnosisTypeCS",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem DiagnosisTypeCS</b></p><a name=\"DiagnosisTypeCS\"> </a><a name=\"hcDiagnosisTypeCS\"> </a><p>Detta case-sensitive kodsystem <code>https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">HD<a name=\"DiagnosisTypeCS-HD\"> </a></td><td>Huvuddiagnos</td><td>Huvuddiagnos (HD) – primär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType HD</td></tr><tr><td style=\"white-space:nowrap\">BY<a name=\"DiagnosisTypeCS-BY\"> </a></td><td>Bidiagnos</td><td>Bidiagnos (BY) – sekundär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType BY</td></tr></table></div>"
+  },
+  "url" : "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp",
+  "version" : "0.1.0",
+  "name" : "DiagnosisTypeCS",
+  "title" : "Diagnos Typ (kv_diagnostyp)",
+  "status" : "draft",
+  "experimental" : true,
+  "date" : "2026-06-24T18:55:38+00:00",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    },
+    {
+      "system" : "email",
+      "value" : "oskar.thunman@inera.se"
+    }]
+  }],
+  "description" : "Ineras kodverk för diagnostyp (kv_diagnostyp) hämtat från terminologitjänsten.\nAnger om en diagnos är huvud- eller bidiagnos enligt Ineras RIVTA-tjänstekontrakt GetDiagnosis:2.\nKoderna HD och BY används direkt som värden i FHIR Condition.category.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "caseSensitive" : true,
+  "content" : "complete",
+  "concept" : [{
+    "code" : "HD",
+    "display" : "Huvuddiagnos",
+    "definition" : "Huvuddiagnos (HD) – primär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType HD"
+  },
+  {
+    "code" : "BY",
+    "display" : "Bidiagnos",
+    "definition" : "Bidiagnos (BY) – sekundär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType BY"
+  }]
+}

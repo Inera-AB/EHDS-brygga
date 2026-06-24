@@ -1,0 +1,35 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/Patient/SEEHDSPatientExample> a fhir:Patient ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "SEEHDSPatientExample"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://fhir.inera.se/StructureDefinition/se-ehds-patient"^^xsd:anyURI ;
+       fhir:link <https://fhir.inera.se/StructureDefinition/se-ehds-patient>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: Patient SEEHDSPatientExample</b></p><a name=\"SEEHDSPatientExample\"> </a><a name=\"hcSEEHDSPatientExample\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profil: <a href=\"StructureDefinition-se-ehds-patient.html\">SE EHDS Patient</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Anna Andersson (official) Female, Födelsedatum: 1950-01-01 ( http://electronichealth.se/identifier/personnummer#NsPersonnummer#195001011234)</p><hr/></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://electronichealth.se/identifier/personnummer"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "195001011234" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:family [ fhir:v "Andersson" ] ;
+     fhir:given ( [ fhir:v "Anna" ] )
+  ] ) ; # 
+  fhir:gender [ fhir:v "female"] ; # 
+  fhir:birthDate [ fhir:v "1950-01-01"^^xsd:date] . # 
+
+# -------------------------------------------------------------------------------------
+

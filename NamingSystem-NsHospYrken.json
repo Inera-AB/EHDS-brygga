@@ -1,0 +1,49 @@
+{
+  "resourceType" : "NamingSystem",
+  "id" : "NsHospYrken",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: NamingSystem NsHospYrken</b></p><a name=\"NsHospYrken\"> </a><a name=\"hcNsHospYrken\"> </a><h3>Sammanfattning</h3><table class=\"grid\"><tr><td>Definierande URL</td><td>https://fhir.inera.se/NamingSystem/NsHospYrken</td></tr><tr><td>Version</td><td>0.1.0</td></tr><tr><td>Namn</td><td>NsHospYrken</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>Definition</td><td><div><p>Klassifikation av yrkeskategorier i hälso- och sjukvård (OID 1.2.752.116.3.1.3) från Socialstyrelsens HOSP-register. Förekommer i RIVTA-svar som professionskod.</p>\n</div></td></tr><tr><td>Utgivare</td><td>Inera AB</td></tr></table><h3>Identifierare</h3><table class=\"grid\"><tr><td><b>Typ</b></td><td><b>Värde</b></td><td><b>Föredragen</b></td></tr><tr><td>OID</td><td>1.2.752.116.3.1.3</td><td/></tr><tr><td>URI</td><td>urn:oid:1.2.752.116.3.1.3</td><td>true</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.url",
+    "valueUri" : "https://fhir.inera.se/NamingSystem/NsHospYrken"
+  },
+  {
+    "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version",
+    "valueString" : "0.1.0"
+  }],
+  "name" : "NsHospYrken",
+  "status" : "active",
+  "kind" : "codesystem",
+  "date" : "2024-01-01",
+  "publisher" : "Inera AB",
+  "contact" : [{
+    "name" : "Inera AB",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "https://www.inera.se"
+    },
+    {
+      "system" : "email",
+      "value" : "oskar.thunman@inera.se"
+    }]
+  }],
+  "description" : "Klassifikation av yrkeskategorier i hälso- och sjukvård (OID 1.2.752.116.3.1.3) från Socialstyrelsens HOSP-register. Förekommer i RIVTA-svar som professionskod.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "SE",
+      "display" : "Sweden"
+    }]
+  }],
+  "uniqueId" : [{
+    "type" : "oid",
+    "value" : "1.2.752.116.3.1.3"
+  },
+  {
+    "type" : "uri",
+    "value" : "urn:oid:1.2.752.116.3.1.3",
+    "preferred" : true
+  }]
+}

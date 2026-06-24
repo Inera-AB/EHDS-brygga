@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mappning: GetDiagnosis → Condition - SE EHDS Brygga Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"2"}
+    h3,h4,h5,h6{--heading-prefix:"2"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">SE EHDS Brygga Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis → Condition</a></li>
+                <li><a href="mapping-getdocumentlist.html">GetDocumentList → DocumentReference</a></li>
+              </ul>
+            </li>
+            <li><a href="naming-systems.html">OID-mappningar</a></li>
+            <li><a href="architecture.html">Arkitektur</a></li>
+            <li><a href="artifacts.html">Artefakter</a></li>
+            <li><a href="downloads.html">Nedladdningar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mappning: GetDiagnosis → Condition</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">SE EHDS Brygga Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>Mappning: GetDiagnosis → Condition</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#mappning-getdiagnosis--condition" id="markdown-toc-mappning-getdiagnosis--condition">Mappning: GetDiagnosis → Condition</a>    <ul>
+      <li><a href="#bakgrund" id="markdown-toc-bakgrund">Bakgrund</a></li>
+      <li><a href="#mappningstabell" id="markdown-toc-mappningstabell">Mappningstabell</a></li>
+      <li><a href="#healthcareprofessionaltype--practitionerrole" id="markdown-toc-healthcareprofessionaltype--practitionerrole">healthcareProfessionalType → PractitionerRole</a></li>
+      <li><a href="#eu-profiler-i-metaprofile" id="markdown-toc-eu-profiler-i-metaprofile">EU-profiler i meta.profile</a></li>
+      <li><a href="#oid-till-uri-mappningar" id="markdown-toc-oid-till-uri-mappningar">OID till URI-mappningar</a></li>
+      <li><a href="#härledning-av-clinicalstatus" id="markdown-toc-härledning-av-clinicalstatus">Härledning av clinicalStatus</a></li>
+      <li><a href="#hantering-av-diagnostyp" id="markdown-toc-hantering-av-diagnostyp">Hantering av diagnosTyp</a></li>
+      <li><a href="#datumsformat" id="markdown-toc-datumsformat">Datumsformat</a></li>
+      <li><a href="#exempel-getdiagnosis-svar-och-resulterande-fhir-condition" id="markdown-toc-exempel-getdiagnosis-svar-och-resulterande-fhir-condition">Exempel: GetDiagnosis-svar och resulterande FHIR Condition</a>        <ul>
+          <li><a href="#rivta-xml-svar-getdiagnosis2" id="markdown-toc-rivta-xml-svar-getdiagnosis2">RIVTA XML-svar (GetDiagnosis:2)</a></li>
+          <li><a href="#resulterande-fhir-condition-json" id="markdown-toc-resulterande-fhir-condition-json">Resulterande FHIR Condition (JSON)</a></li>
+          <li><a href="#förklaring-av-mappningen-i-exemplet" id="markdown-toc-förklaring-av-mappningen-i-exemplet">Förklaring av mappningen i exemplet</a></li>
+        </ul>
+      </li>
+      <li><a href="#fältvalidering" id="markdown-toc-fältvalidering">Fältvalidering</a></li>
+      <li><a href="#provenance" id="markdown-toc-provenance">Provenance</a></li>
+      <li><a href="#poc-begränsningar" id="markdown-toc-poc-begränsningar">PoC-begränsningar</a>        <ul>
+          <li><a href="#spärr-inre-och-yttre" id="markdown-toc-spärr-inre-och-yttre">Spärr: inre och yttre</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="mappning-getdiagnosis--condition">Mappning: GetDiagnosis → Condition</h1>
+
+<h2 id="bakgrund">Bakgrund</h2>
+
+<p>RIVTA-tjänstekontraktet <code class="language-plaintext highlighter-rouge">clinicalprocess:activity:conditions:GetDiagnosis:2</code> (förkortat <code class="language-plaintext highlighter-rouge">GetDiagnosis:2</code>)
+används för att hämta diagnosinformation från svenska journalsystem via Ineras nationella tjänsteplattform.</p>
+
+<p>EHDS-bryggan mappar svarsmeddelandet från detta tjänstekontrakt till FHIR R4-resursen
+<a href="https://hl7.org/fhir/R4/condition.html">Condition</a>, profilerad som
+<a href="StructureDefinition-se-ehds-condition.html">SEEHDSCondition</a>.</p>
+
+<h2 id="mappningstabell">Mappningstabell</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.patientId.extension</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.subject.identifier.value</code></td>
+      <td>Personnummer eller samordningsnummer – subject är SEBasePatient</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.patientId.root</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.subject.identifier.system</code></td>
+      <td>OID konverteras till URI, se tabell nedan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.sourceSystemHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.meta.source</code></td>
+      <td>Källsystemets HSA-id som URI (urn:oid:{OID}#{hsaId})</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.documentTime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.recordedDate</code></td>
+      <td>Format YYYYMMDDHHMMSS → ISO 8601</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.diagnosisCode.code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code.coding.code</code></td>
+      <td>ICD-10-SE kod, t.ex. <code class="language-plaintext highlighter-rouge">J18.9</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.diagnosisCode.codeSystem</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code.coding.system</code></td>
+      <td>OID <code class="language-plaintext highlighter-rouge">1.2.752.116.1.1.1.1.3</code> → <code class="language-plaintext highlighter-rouge">https://www.icd10.se/</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.diagnosisCode.displayName</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code.coding.display</code></td>
+      <td>Kodverkets officiella benämning</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.diagnosisCode.originalText</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.code.text</code></td>
+      <td>Fritext från källsystemet; om saknad används <code class="language-plaintext highlighter-rouge">displayName</code> som fallback</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.diagnosisType</code> (HD)</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.category[diagnostyp]</code> = <code class="language-plaintext highlighter-rouge">HD</code> (kv_diagnostyp)</td>
+      <td>Huvuddiagnos → Ineras kv_diagnostyp-kod</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.diagnosisType</code> (BY)</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.category[diagnostyp]</code> = <code class="language-plaintext highlighter-rouge">BY</code> (kv_diagnostyp)</td>
+      <td>Bidiagnos → Ineras kv_diagnostyp-kod</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.diagnosisTimePeriod.start</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.onsetDateTime</code></td>
+      <td>Format YYYYMMDD → YYYY-MM-DD</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisBody.diagnosisTimePeriod.end</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.abatementDateTime</code></td>
+      <td>Om satt: resolved, annars active</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.accountableHealthcareProfessional</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.recorder</code> (Reference(PractitionerRole))</td>
+      <td>Ansvarig hälso- och sjukvårdspersonal – logisk referens via HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.legalAuthenticator</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.asserter</code> (Reference(PractitionerRole))</td>
+      <td>Rättslig äkthetsintygsgivare – logisk referens via HSA-id</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.legalAuthenticator</code> (datum)</td>
+      <td><code class="language-plaintext highlighter-rouge">Condition.extension[assertedDate]</code></td>
+      <td>Administrativt intygsgivningsdatum (YYYYMMDD → YYYY-MM-DD)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.careProviderHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian]</code></td>
+      <td>Juridiskt ansvarig vårdgivare – används för Sparr</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.careUnitHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author]</code></td>
+      <td>Informationsägare vårdenhet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.documentTime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.recorded</code></td>
+      <td>Tidsstämpel för Provenance</td>
+    </tr>
+    <tr>
+      <td>(bryggan självt, <code class="language-plaintext highlighter-rouge">EHDS_BRIDGE_HSA_ID</code>)</td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[assembler]</code></td>
+      <td>Bryggan som sammansättande aktör</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="healthcareprofessionaltype--practitionerrole">healthcareProfessionalType → PractitionerRole</h2>
+
+<p>Både <code class="language-plaintext highlighter-rouge">accountableHealthcareProfessional</code> och <code class="language-plaintext highlighter-rouge">legalAuthenticator</code> är av RIVTA-typen
+<code class="language-plaintext highlighter-rouge">healthcareProfessionalType</code>, som innehåller uppgifter om en person och deras yrkesroll
+vid tidpunkten för dokumentet. Dessa mappas till FHIR <code class="language-plaintext highlighter-rouge">PractitionerRole</code> som anges
+som logisk referens via HSA-identifierare.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-underelement</th>
+      <th>FHIR PractitionerRole-fält</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">healthcareProfessional.personId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.identifier.value</code></td>
+      <td>HSA-id för personen</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">healthcareProfessional.personId.root</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.identifier.system</code></td>
+      <td>OID→URI via NamingSystemRegistry</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">roleAtTime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.code</code></td>
+      <td>Yrkeskategori/roll vid tillfället</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">accountableHealthcareProfessional</code> mappas till <code class="language-plaintext highlighter-rouge">Condition.recorder</code> och
+<code class="language-plaintext highlighter-rouge">legalAuthenticator</code> mappas till <code class="language-plaintext highlighter-rouge">Condition.asserter</code>. Datum för <code class="language-plaintext highlighter-rouge">legalAuthenticator</code>
+placeras i <code class="language-plaintext highlighter-rouge">Condition.extension[assertedDate]</code>.</p>
+
+<h2 id="eu-profiler-i-metaprofile">EU-profiler i meta.profile</h2>
+
+<p>Varje producerad Condition bär <strong>två profiler</strong> i <code class="language-plaintext highlighter-rouge">meta.profile</code>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Profil</th>
+      <th>URL</th>
+      <th>Syfte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SEEHDSCondition</td>
+      <td><code class="language-plaintext highlighter-rouge">https://fhir.inera.se/StructureDefinition/se-ehds-condition</code></td>
+      <td>Bryggornas nationella RIVTA-mappningsprofil</td>
+    </tr>
+    <tr>
+      <td>condition-obl-eu-eps</td>
+      <td><code class="language-plaintext highlighter-rouge">http://hl7.eu/fhir/eps/StructureDefinition/condition-obl-eu-eps</code></td>
+      <td>EU EPS obligations-profil (hl7.fhir.eu.eps)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>EU EPS-profilen (<code class="language-plaintext highlighter-rouge">condition-obl-eu-eps</code>) är en <em>obligations</em>-profil på toppen av IPS Condition
+som specificerar EU EHDS-krav för klinisk status, verifieringsstatus och kod.
+Bryggan sätter båda profilerna ovillkorligt på varje Condition den producerar.</p>
+
+<h2 id="oid-till-uri-mappningar">OID till URI-mappningar</h2>
+
+<p>RIVTA använder OID-identifierare (Object Identifiers) för kodsystem och personidentifierare.
+FHIR föredrar URI:er. EHDS-bryggan utför följande konverteringar via <code class="language-plaintext highlighter-rouge">NamingSystemRegistry</code>.
+Se <a href="naming-systems.html">OID-till-URI-mappningar</a> för den kompletta tabellen med alla 12 registrerade OID:er.</p>
+
+<p>De OID:er som förekommer i GetDiagnosis:2-svar:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>OID</th>
+      <th>URI</th>
+      <th>Beskrivning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/personnummer</code></td>
+      <td>Personnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/samordningsnummer</code></td>
+      <td>Samordningsnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.4.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1</code></td>
+      <td>HSA-id (Inera NTjP)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.29.4.19</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.29.4.19</code></td>
+      <td>HSA-id (HL7 Sweden basprofiler)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.116.1.1.1.1.3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">https://www.icd10.se/</code></td>
+      <td>ICD-10-SE (primärt diagnoskodsystem)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">2.16.840.1.113883.6.3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/sid/icd-10</code></td>
+      <td>ICD-10 (internationell, WHO)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">2.16.840.1.113883.6.96</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://snomed.info/sct</code></td>
+      <td>SNOMED CT</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>OID:er som inte har en känd URI-mappning bevaras som <code class="language-plaintext highlighter-rouge">urn:oid:{oid}</code>.</p>
+
+<p>Profilen deklarerar ett namngivet snitt <code class="language-plaintext highlighter-rouge">code.coding[ICD10SE]</code> för ICD-10-SE-koder
+(<code class="language-plaintext highlighter-rouge">system = https://www.icd10.se/</code>). Övriga kodsystem (ICD-10 international, SNOMED CT) placeras
+i ej namngivna snitt (<code class="language-plaintext highlighter-rouge">code.coding</code> utan slice-begränsning) — profilen är öppen (<code class="language-plaintext highlighter-rouge">rules = #open</code>).</p>
+
+<p>Provenance-resurser inkluderas i sökbundlen med <code class="language-plaintext highlighter-rouge">searchMode = include</code> och refererar till sitt Condition via <code class="language-plaintext highlighter-rouge">Provenance.target</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>FHIR-resurs</th>
+      <th>Koppling</th>
+      <th>Beskrivning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.target</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:uuid:{Condition.id}</code></td>
+      <td>Provenance beskriver denna Condition</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">careProviderHSAId</code></td>
+      <td>Juridiskt ansvarig vårdgivare (organisationsnivå, yttre Sparr)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">careUnitHSAId</code></td>
+      <td>Informationsägare vårdenhet (inre Sparr)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[assembler]</code></td>
+      <td><code class="language-plaintext highlighter-rouge">EHDS_BRIDGE_HSA_ID</code></td>
+      <td>Bryggan som sammansatte FHIR-svaret</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="härledning-av-clinicalstatus">Härledning av clinicalStatus</h2>
+
+<p>RIVTA-tjänstekontraktet innehåller inte ett explicit statusfält. <code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code> härledas
+baserat på förekomsten av slutdatum i diagnosperiodens tidsintervall:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><code class="language-plaintext highlighter-rouge">diagnosisTimePeriod.end</code></th>
+      <th><code class="language-plaintext highlighter-rouge">Condition.clinicalStatus</code></th>
+      <th>Förklaring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Inte satt (null)</td>
+      <td><code class="language-plaintext highlighter-rouge">active</code></td>
+      <td>Diagnosen anses fortfarande aktiv</td>
+    </tr>
+    <tr>
+      <td>Satt (datum finns)</td>
+      <td><code class="language-plaintext highlighter-rouge">resolved</code></td>
+      <td>Diagnosen har avslutats</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">Condition.verificationStatus</code> sätts alltid till <code class="language-plaintext highlighter-rouge">confirmed</code> vid mappning från RIVTA,
+eftersom RIVTA-svar representerar bekräftade journaluppgifter.</p>
+
+<h2 id="hantering-av-diagnostyp">Hantering av diagnosTyp</h2>
+
+<p>RIVTA-koden för diagnostyp (<code class="language-plaintext highlighter-rouge">diagnosisType</code>) används för att sätta <code class="language-plaintext highlighter-rouge">Condition.category</code>.
+Se även <a href="ConceptMap-DiagnosisTypeToCategoryMap.html">ConceptMap DiagnosisTypeToCategoryMap</a>
+för den fullständiga mappningen.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA diagnosisType</th>
+      <th>Kod</th>
+      <th>System</th>
+      <th>FHIR category[diagnostyp]-kod</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">HD</code> – Huvuddiagnos</td>
+      <td><code class="language-plaintext highlighter-rouge">HD</code></td>
+      <td><code class="language-plaintext highlighter-rouge">https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</code></td>
+      <td>Ineras kv_diagnostyp</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">BY</code> – Bidiagnos</td>
+      <td><code class="language-plaintext highlighter-rouge">BY</code></td>
+      <td><code class="language-plaintext highlighter-rouge">https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</code></td>
+      <td>Ineras kv_diagnostyp</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Profilen kräver exakt ett <code class="language-plaintext highlighter-rouge">category[diagnostyp]</code>-snitt med en kod från Ineras kodverk <code class="language-plaintext highlighter-rouge">kv_diagnostyp</code>.
+Ytterligare <code class="language-plaintext highlighter-rouge">category</code>-poster (t.ex. <code class="language-plaintext highlighter-rouge">encounter-diagnosis</code> från standard-FHIR) kan läggas till av konsumenten
+men hanteras inte av denna profil.</p>
+
+<p><strong>Fallback:</strong> Om <code class="language-plaintext highlighter-rouge">diagnosisType</code> saknar en känd mappning i <code class="language-plaintext highlighter-rouge">ConceptMapRegistry</code> loggas ett varningsmeddelande.
+Condition inkluderas alltid i svaret.</p>
+
+<h2 id="datumsformat">Datumsformat</h2>
+
+<p>RIVTA använder heltalssträngar för datum och tidsstämplar. FHIR kräver ISO 8601-format.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-format</th>
+      <th>Exempel</th>
+      <th>FHIR-format</th>
+      <th>Exempel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">YYYYMMDDHHMMSS</code></td>
+      <td><code class="language-plaintext highlighter-rouge">20230601120000</code></td>
+      <td><code class="language-plaintext highlighter-rouge">YYYY-MM-DDTHH:MM:SS</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2023-06-01T12:00:00</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">YYYYMMDD</code></td>
+      <td><code class="language-plaintext highlighter-rouge">20230601</code></td>
+      <td><code class="language-plaintext highlighter-rouge">YYYY-MM-DD</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2023-06-01</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Tidszoner anges inte explicit i RIVTA-kontraktet. EHDS-bryggan tolkar alla tider som lokal
+svensk tid (Europe/Stockholm) och konverterar till UTC vid behov.</p>
+
+<h2 id="exempel-getdiagnosis-svar-och-resulterande-fhir-condition">Exempel: GetDiagnosis-svar och resulterande FHIR Condition</h2>
+
+<h3 id="rivta-xml-svar-getdiagnosis2">RIVTA XML-svar (GetDiagnosis:2)</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;ns1:diagnosis&gt;</span>
+  <span class="nt">&lt;ns1:diagnosisHeader&gt;</span>
+    <span class="nt">&lt;ns1:patientId&gt;</span>
+      <span class="nt">&lt;ns1:root&gt;</span>1.2.752.129.2.1.3.1<span class="nt">&lt;/ns1:root&gt;</span>
+      <span class="nt">&lt;ns1:extension&gt;</span>191212121212<span class="nt">&lt;/ns1:extension&gt;</span>
+    <span class="nt">&lt;/ns1:patientId&gt;</span>
+    <span class="nt">&lt;ns1:sourceSystemHSAId&gt;</span>SE2321000016-4HK5<span class="nt">&lt;/ns1:sourceSystemHSAId&gt;</span>
+    <span class="nt">&lt;ns1:documentTime&gt;</span>20230601120000<span class="nt">&lt;/ns1:documentTime&gt;</span>
+  <span class="nt">&lt;/ns1:diagnosisHeader&gt;</span>
+  <span class="nt">&lt;ns1:diagnosisBody&gt;</span>
+    <span class="nt">&lt;ns1:diagnosisCode&gt;</span>
+      <span class="nt">&lt;ns1:code&gt;</span>J18.9<span class="nt">&lt;/ns1:code&gt;</span>
+      <span class="nt">&lt;ns1:codeSystem&gt;</span>1.2.752.116.1.1.1.1.3<span class="nt">&lt;/ns1:codeSystem&gt;</span>
+      <span class="nt">&lt;ns1:displayName&gt;</span>Pneumoni, ospecificerad<span class="nt">&lt;/ns1:displayName&gt;</span>
+    <span class="nt">&lt;/ns1:diagnosisCode&gt;</span>
+    <span class="nt">&lt;ns1:diagnosisType&gt;</span>HD<span class="nt">&lt;/ns1:diagnosisType&gt;</span>
+    <span class="nt">&lt;ns1:diagnosisTimePeriod&gt;</span>
+      <span class="nt">&lt;ns1:start&gt;</span>20230601<span class="nt">&lt;/ns1:start&gt;</span>
+    <span class="nt">&lt;/ns1:diagnosisTimePeriod&gt;</span>
+  <span class="nt">&lt;/ns1:diagnosisBody&gt;</span>
+<span class="nt">&lt;/ns1:diagnosis&gt;</span>
+</code></pre></div></div>
+
+<h3 id="resulterande-fhir-condition-json">Resulterande FHIR Condition (JSON)</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Condition"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example-pneumoni"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:oid:1.2.752.129.2.1.4.1#SE2321000016-4HK5"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"https://fhir.inera.se/StructureDefinition/se-ehds-condition"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"clinicalStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/condition-clinical"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"verificationStatus"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://terminology.hl7.org/CodeSystem/condition-ver-status"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"confirmed"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Confirmed"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HD"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Huvuddiagnos"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.icd10.se/"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"J18.9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pneumoni, ospecificerad"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"subject"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://electronichealth.se/identifier/personnummer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"191212121212"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"onsetDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-01"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"recordedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-01T12:00:00"</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="förklaring-av-mappningen-i-exemplet">Förklaring av mappningen i exemplet</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">clinicalStatus = active</code> – inget slutdatum i <code class="language-plaintext highlighter-rouge">diagnosisTimePeriod</code>, så diagnosen är fortfarande aktiv</li>
+  <li><code class="language-plaintext highlighter-rouge">category[diagnostyp].coding.code = HD</code> – <code class="language-plaintext highlighter-rouge">diagnosisType = HD</code> (Huvuddiagnos) mappas direkt till Ineras kv_diagnostyp-kod</li>
+  <li><code class="language-plaintext highlighter-rouge">code.coding.system = https://www.icd10.se/</code> – OID <code class="language-plaintext highlighter-rouge">1.2.752.116.1.1.1.1.3</code> konverteras till ICD-10-SE URI</li>
+  <li><code class="language-plaintext highlighter-rouge">subject.identifier.system = http://electronichealth.se/identifier/personnummer</code> – OID <code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code> konverteras till kanonisk URI (HL7 Sweden basprofiler)</li>
+  <li><code class="language-plaintext highlighter-rouge">recordedDate</code> – <code class="language-plaintext highlighter-rouge">20230601120000</code> konverteras till <code class="language-plaintext highlighter-rouge">2023-06-01T12:00:00</code></li>
+  <li><code class="language-plaintext highlighter-rouge">onsetDateTime</code> – <code class="language-plaintext highlighter-rouge">20230601</code> konverteras till <code class="language-plaintext highlighter-rouge">2023-06-01</code></li>
+  <li><code class="language-plaintext highlighter-rouge">meta.source = urn:oid:1.2.752.129.2.1.4.1#SE2321000016-4HK5</code> – källsystemets HSA-id som URI</li>
+</ul>
+
+<h2 id="fältvalidering">Fältvalidering</h2>
+
+<p>Profilen <a href="StructureDefinition-se-ehds-condition.html">SEEHDSCondition</a> kräver följande fält (kardinalitet 1..1 eller 1..*):</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">clinicalStatus</code> – alltid satt</li>
+  <li><code class="language-plaintext highlighter-rouge">verificationStatus</code> – alltid satt till <code class="language-plaintext highlighter-rouge">confirmed</code></li>
+  <li><code class="language-plaintext highlighter-rouge">category</code> – minst en diagnostyp</li>
+  <li><code class="language-plaintext highlighter-rouge">code</code> – diagnoskod med minst en coding</li>
+  <li><code class="language-plaintext highlighter-rouge">subject.identifier</code> – patientidentifierare med system och value</li>
+  <li><code class="language-plaintext highlighter-rouge">recorder.identifier.system</code> och <code class="language-plaintext highlighter-rouge">recorder.identifier.value</code> – om recorder är satt (accountableHealthcareProfessional)</li>
+  <li><code class="language-plaintext highlighter-rouge">asserter.identifier.system</code> och <code class="language-plaintext highlighter-rouge">asserter.identifier.value</code> – om asserter är satt (legalAuthenticator)</li>
+</ul>
+
+<p>Bryggan avvisar RIVTA-svar som saknar obligatoriska fält och loggar valideringsfel.</p>
+
+<h2 id="provenance">Provenance</h2>
+
+<p>För varje Condition skapas en Provenance-resurs som inkluderas i sökbundlen med <code class="language-plaintext highlighter-rouge">Bundle.entry.search.mode = include</code>. Provenance-resursen bär den fullständiga provenanskedjan:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Agent-roll</th>
+      <th>Källa</th>
+      <th>Syfte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">custodian</code></td>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.careProviderHSAId</code></td>
+      <td>Juridiskt ansvarig vårdgivare – används av Sparrtjänsten</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">author</code></td>
+      <td><code class="language-plaintext highlighter-rouge">diagnosisHeader.careUnitHSAId</code></td>
+      <td>Informationsägare vårdenhet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">assembler</code></td>
+      <td><code class="language-plaintext highlighter-rouge">EHDS_BRIDGE_HSA_ID</code> (env-variabel)</td>
+      <td>EHDS-bryggan som sammansatte FHIR-bundlen</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">Provenance.recorded</code> sätts till <code class="language-plaintext highlighter-rouge">diagnosisHeader.documentTime</code> (konverterad till ISO 8601 + UTC).
+Om <code class="language-plaintext highlighter-rouge">documentTime</code> saknas används aktuell systemtid.</p>
+
+<p>Provenance-resursen refererar Condition via <code class="language-plaintext highlighter-rouge">Provenance.target = urn:uuid:{Condition.id}</code>.</p>
+
+<h2 id="poc-begränsningar">PoC-begränsningar</h2>
+
+<h3 id="spärr-inre-och-yttre">Spärr: inre och yttre</h3>
+<p>EHDS-bryggan är avsedd för cross-border och ska applicera alla spärrar. Sparrkontrollen sker mot <code class="language-plaintext highlighter-rouge">careProviderHSAId</code> (organisationsnivå) i enlighet med Ineras spärrtjänst som beskrivs på <a href="https://inera.atlassian.net/wiki/spaces/PIS/pages/3435203724/">Ineras konfluensida</a>.</p>
+
+<p><strong>Utanför PoC-scope:</strong> En vårdgivare som tillhör en spärrad enhet men ändå har rätt att ta del av informationen (t.ex. nödsituationer / break-the-glass) hanteras inte. Denna logik kräver kontextinformation om inloggad användares behörighet och är out of scope för PoC:en.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package se.ehds.brygga#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 18:55+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

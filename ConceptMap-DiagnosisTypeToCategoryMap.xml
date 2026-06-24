@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="DiagnosisTypeToCategoryMap"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: ConceptMap DiagnosisTypeToCategoryMap</b></p><a name="DiagnosisTypeToCategoryMap"> </a><a name="hcDiagnosisTypeToCategoryMap"> </a><p>Mappning från <a href="CodeSystem-DiagnosisTypeCS.html">https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</a> till <a href="CodeSystem-DiagnosisTypeCS.html">https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</a></p><br/><p>Mappning från <a href="CodeSystem-DiagnosisTypeCS.html">Diagnos Typ (kv_diagnostyp)</a> to <a href="CodeSystem-DiagnosisTypeCS.html">Diagnos Typ (kv_diagnostyp)</a></p><table class="grid"><tr><td><b>Källkod</b></td><td><b>Relation</b></td><td><b>Målkod</b></td></tr><tr><td>HD (Huvuddiagnos)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal" title="equal">is equal to</a></td><td>HD (Huvuddiagnos)</td></tr><tr><td>BY (Bidiagnos)</td><td><a href="http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal" title="equal">is equal to</a></td><td>BY (Bidiagnos)</td></tr></table></div>
+  </text>
+  <url value="https://fhir.inera.se/ConceptMap/DiagnosisTypeToCategoryMap"/>
+  <version value="0.1.0"/>
+  <name value="DiagnosisTypeToCategoryMap"/>
+  <title value="DiagnosisType → Condition.category"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2026-06-24T18:55:38+00:00"/>
+  <publisher value="Inera AB"/>
+  <contact>
+    <name value="Inera AB"/>
+    <telecom>
+      <system value="url"/>
+      <value value="https://www.inera.se"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="oskar.thunman@inera.se"/>
+    </telecom>
+  </contact>
+  <description value="Mappning av RIVTA diagnosisType (HD/BY) från kv_diagnostyp till FHIR Condition.category[diagnostyp]"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="SE"/>
+      <display value="Sweden"/>
+    </coding>
+  </jurisdiction>
+  <sourceUri value="https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"/>
+  <targetUri value="https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"/>
+  <group>
+    <source value="https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"/>
+    <target value="https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"/>
+    <element>
+      <code value="HD"/>
+      <display value="Huvuddiagnos"/>
+      <target>
+        <code value="HD"/>
+        <display value="Huvuddiagnos"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="BY"/>
+      <display value="Bidiagnos"/>
+      <target>
+        <code value="BY"/>
+        <display value="Bidiagnos"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

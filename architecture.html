@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>Arkitektur - SE EHDS Brygga Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link rel="stylesheet" href="fhir.css"/>
+
+      <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap-fhir.css"/>
+
+      <!-- Project extras -->
+    <link rel="stylesheet" href="assets/css/project.css"/>
+    <link rel="stylesheet" href="assets/css/pygments-manni.css"/>
+    <link rel="stylesheet" href="assets/css/jquery-ui.css"/>
+  	<link rel="stylesheet" href="assets/css/prism.css"/>
+  	<link rel="stylesheet" href="assets/css/cqf.css"/>
+    <link rel="stylesheet" href="inera.css"/>
+<link rel="icon" href="inera-thumbnail.png" type="image/png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script src="fhir-table-scripts.js" type="text/javascript"> </script>
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- [if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif] -->
+
+      <!-- Favicons -->
+    <link sizes="144x144" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-144.png"/>
+    <link sizes="114x114" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-114.png"/>
+    <link sizes="72x72" rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script src="assets/js/mermaid.js" type="text/javascript"></script>
+    <script src="assets/js/mermaid-init.js" type="text/javascript"></script>
+    <style type="text/css">h2{--heading-prefix:"5"}
+    h3,h4,h5,h6{--heading-prefix:"5"}</style>
+    <div id="segment-header" class="segment">    <!-- segment-header -->
+      <div class="container">    <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" href="https://www.inera.se" data-no-external="true">
+    <img src="inera-logo-header.svg" alt="Inera" height="50"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">SE EHDS Brygga Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img src="assets/images/swe.svg" alt="Sweden flag" title="Sweden" height="16"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div>   <!-- /container -->
+    </div>    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">    <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">    <!-- container -->
+          <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+            <!-- status-bar -->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a href="http://hl7.org/fhir/R4/index.html" class="navbar-brand hidden">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis → Condition</a></li>
+                <li><a href="mapping-getdocumentlist.html">GetDocumentList → DocumentReference</a></li>
+              </ul>
+            </li>
+            <li><a href="naming-systems.html">OID-mappningar</a></li>
+            <li><a href="architecture.html">Arkitektur</a></li>
+            <li><a href="artifacts.html">Artefakter</a></li>
+            <li><a href="downloads.html">Nedladdningar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>    <!-- /.nav-collapse -->
+          </div>    <!-- /.container -->
+        </nav>    <!-- /.navbar -->
+        <!-- /HEADER CONTENT -->
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-navbar -->
+      <!-- status-bar -->
+
+    <div id="segment-breadcrumb" class="segment">    <!-- segment-breadcrumb -->
+      <div class="container">    <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href="toc.html"><b>Table of Contents</b></a></li><li><b>Arkitektur</b></li>
+
+        </ul>
+      </div>    <!-- /container -->
+    </div>    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">    <!-- segment-content -->
+      <div class="container">    <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+    <!-- ReleaseHeader --><p id="publish-box">SE EHDS Brygga Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7&reg; FHIR&reg; Standard) Build Tools. Se <a href="https://fhir.inera.se/history.html">katalogen över publicerade versioner</a></p>  <!-- EndReleaseHeader -->
+  <h2>Arkitektur</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p>  <!-- white space is critical inside of capture --></p>
+<div class="markdown-toc">
+<ul id="markdown-toc">
+  <li><a href="#arkitektur" id="markdown-toc-arkitektur">Arkitektur</a>    <ul>
+      <li><a href="#översikt" id="markdown-toc-översikt">Översikt</a></li>
+      <li><a href="#containers-och-moduler" id="markdown-toc-containers-och-moduler">Containers och moduler</a>        <ul>
+          <li><a href="#mock-containers-testmiljö" id="markdown-toc-mock-containers-testmiljö">Mock-containers (testmiljö)</a></li>
+        </ul>
+      </li>
+      <li><a href="#systemkomponenter" id="markdown-toc-systemkomponenter">Systemkomponenter</a>        <ul>
+          <li><a href="#api-gateway-nginx" id="markdown-toc-api-gateway-nginx">API Gateway (NGINX)</a></li>
+          <li><a href="#åtkomstintygstjänst-planerad" id="markdown-toc-åtkomstintygstjänst-planerad">Åtkomstintygstjänst <em>(planerad)</em></a></li>
+          <li><a href="#fhir-server-spring-boot--hapi-fhir" id="markdown-toc-fhir-server-spring-boot--hapi-fhir">fhir-server (Spring Boot + HAPI FHIR)</a></li>
+          <li><a href="#ntjp-proxy-spring-boot--apache-cxf" id="markdown-toc-ntjp-proxy-spring-boot--apache-cxf">ntjp-proxy (Spring Boot + Apache CXF)</a></li>
+          <li><a href="#mapping-engine-maven-bibliotek" id="markdown-toc-mapping-engine-maven-bibliotek">mapping-engine (Maven-bibliotek)</a></li>
+          <li><a href="#ei-engagemangsindex" id="markdown-toc-ei-engagemangsindex">EI (Engagemangsindex)</a></li>
+          <li><a href="#ntjp--vp-nationell-tjänsteplattform--virtuell-producent" id="markdown-toc-ntjp--vp-nationell-tjänsteplattform--virtuell-producent">NTjP / VP (Nationell Tjänsteplattform / Virtuell Producent)</a></li>
+          <li><a href="#säkerhetstjänsten-spärr" id="markdown-toc-säkerhetstjänsten-spärr">Säkerhetstjänsten (Spärr)</a></li>
+          <li><a href="#loggtjänst-atnabalp" id="markdown-toc-loggtjänst-atnabalp">Loggtjänst (ATNA/BALP)</a></li>
+        </ul>
+      </li>
+      <li><a href="#anropsflöde" id="markdown-toc-anropsflöde">Anropsflöde</a>        <ul>
+          <li><a href="#vg-scopat-anrop-get-fhirvg-hsa-idcondition" id="markdown-toc-vg-scopat-anrop-get-fhirvg-hsa-idcondition">VG-scopat anrop: GET /fhir/{vg-hsa-id}/Condition</a></li>
+        </ul>
+      </li>
+      <li><a href="#provenance" id="markdown-toc-provenance">Provenance</a></li>
+      <li><a href="#mappningsmotor" id="markdown-toc-mappningsmotor">Mappningsmotor</a>        <ul>
+          <li><a href="#fas-1-fhir--soap-begäran" id="markdown-toc-fas-1-fhir--soap-begäran">Fas 1: FHIR → SOAP (begäran)</a></li>
+          <li><a href="#fas-2-soap--fhir-svar" id="markdown-toc-fas-2-soap--fhir-svar">Fas 2: SOAP → FHIR (svar)</a></li>
+        </ul>
+      </li>
+      <li><a href="#lägga-till-ett-nytt-tjänstekontrakt" id="markdown-toc-lägga-till-ett-nytt-tjänstekontrakt">Lägga till ett nytt tjänstekontrakt</a></li>
+      <li><a href="#säkerhet-och-dataskydd" id="markdown-toc-säkerhet-och-dataskydd">Säkerhet och dataskydd</a>        <ul>
+          <li><a href="#autentisering-och-auktorisation" id="markdown-toc-autentisering-och-auktorisation">Autentisering och auktorisation</a></li>
+          <li><a href="#åtkomstkontroll" id="markdown-toc-åtkomstkontroll">Åtkomstkontroll</a></li>
+          <li><a href="#loggning-pdl--atnabalp" id="markdown-toc-loggning-pdl--atnabalp">Loggning (PDL / ATNA/BALP)</a></li>
+        </ul>
+      </li>
+      <li><a href="#driftsättning" id="markdown-toc-driftsättning">Driftsättning</a></li>
+      <li><a href="#kända-begränsningar" id="markdown-toc-kända-begränsningar">Kända begränsningar</a>        <ul>
+          <li><a href="#break-the-glass" id="markdown-toc-break-the-glass">Break-the-glass</a></li>
+          <li><a href="#documentreference-provenance" id="markdown-toc-documentreference-provenance">DocumentReference: Provenance</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+<h1 id="arkitektur">Arkitektur</h1>
+
+<h2 id="översikt">Översikt</h2>
+
+<p>EHDS-bryggan exponerar en enskild vårdgivares (VG) hälsodata via ett EURIDICE/FHIR R4-API.
+Varje VG har en dedikerad API-yta under <code class="language-plaintext highlighter-rouge">/fhir/{vg-hsa-id}/</code>, och bryggan fungerar som en
+direktöversättare mellan FHIR och regionens befintliga RIVTA SOAP-tjänster i nationell
+tjänsteplattform (NTjP).</p>
+
+<p>Systemet är utformat för att vara:</p>
+
+<ul>
+  <li><strong>VG-scopat</strong> – ett URL-segment per VG; ingen aggregering över VG-gränser i ett anrop</li>
+  <li><strong>Konfigurationsdrivet</strong> – nya tjänstekontrakt aktiveras via <code class="language-plaintext highlighter-rouge">vg-config.yaml</code> + ny mappningsklass</li>
+  <li><strong>Stateless</strong> – bryggan cachelagrar ingen patientdata; alla anrop är realtidsgenomströmning</li>
+  <li><strong>Spårbart</strong> – alla anrop loggas (ATNA/BALP) i Ineras loggtjänst</li>
+  <li><strong>Säkert</strong> – JWT-validering, mTLS mot NTjP, post-query spärrfiltrering</li>
+</ul>
+
+<h2 id="containers-och-moduler">Containers och moduler</h2>
+
+<p>EHDS-bryggan består av <strong>två huvud-containers</strong>: en gateway och en bryggtjänst.
+Bryggtjänsten i sin tur är uppbyggd av <strong>tre interna moduler</strong>.
+I testmiljö tillkommer fem mock-containers som simulerar externa Inera-tjänster.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Container / modul</th>
+      <th>Teknisk karaktär</th>
+      <th>Syfte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Gateway</strong></td>
+      <td>nginx (PoC), KONG + WSO2 APIM (prod)</td>
+      <td>TLS-terminering, URL-routing, extraherar <code class="language-plaintext highlighter-rouge">{vg-hsa-id}</code> → <code class="language-plaintext highlighter-rouge">X-VG-HSA-ID</code>-header. Serverar SMART <code class="language-plaintext highlighter-rouge">/.well-known/</code>-endpoints (statisk JSON).</td>
+    </tr>
+    <tr>
+      <td><strong>fhir-server</strong> <em>(bryggtjänst, modul 1)</em></td>
+      <td>Spring Boot + HAPI FHIR</td>
+      <td>FHIR Resource Providers. Orkestrering: EI → parallella FHIR-anrop → Spärr → Logg. Talar enbart FHIR mot VG-endpoints via <code class="language-plaintext highlighter-rouge">fhirEndpointUrl</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>ntjp-proxy</strong> <em>(bryggtjänst, modul 2)</em></td>
+      <td>Spring Boot + Apache CXF</td>
+      <td>All SOAP/RIVTA-logik. Innehåller mapping-engine och soap-client. Exponerar FHIR-API per VG. Deployerbar centralt eller nära VG.</td>
+    </tr>
+    <tr>
+      <td><strong>mapping-engine</strong> <em>(bryggtjänst, modul 3)</em></td>
+      <td>Maven-bibliotek (JAR)</td>
+      <td>RIVTA JAXB-typer, NamingSystemRegistry (OID↔URI), ConceptMapRegistry (RIVTA-kod → FHIR-kod), TK-specifika mappningsklasser (GetDiagnosisMapper, GetDocumentListMapper).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="mock-containers-testmiljö">Mock-containers (testmiljö)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mock</th>
+      <th>Port</th>
+      <th>Simulerar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mock-tak</code></td>
+      <td>4001</td>
+      <td>TAK / adresseringskatalog</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mock-ei</code></td>
+      <td>4002</td>
+      <td>Engagemangsindex</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mock-sparr</code></td>
+      <td>4003</td>
+      <td>Säkerhetstjänsten (spärr)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mock-logg</code></td>
+      <td>4004</td>
+      <td>ATNA/BALP-loggtjänst</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mock-backend</code></td>
+      <td>4005</td>
+      <td>Producerande journalsystem (SOAP)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="systemkomponenter">Systemkomponenter</h2>
+
+<h3 id="api-gateway-nginx">API Gateway (NGINX)</h3>
+
+<p>Ingångspunkt för alla externa FHIR-anrop. Hanterar:</p>
+
+<ul>
+  <li>TLS-terminering</li>
+  <li>Multi-tenant URL-routing: extraherar <code class="language-plaintext highlighter-rouge">{vg-hsa-id}</code> ur <code class="language-plaintext highlighter-rouge">/fhir/{vg-hsa-id}/{resurs}</code>
+och vidarebefordrar det som <code class="language-plaintext highlighter-rouge">X-VG-HSA-ID</code>-header till fhir-server</li>
+  <li><em>Planerat:</em> vidarebefordran till Åtkomstintygstjänsten för JWT-validering</li>
+</ul>
+
+<h3 id="åtkomstintygstjänst-planerad">Åtkomstintygstjänst <em>(planerad)</em></h3>
+
+<p>Validerar JWT-åtkomstintyg och kontrollerar att anropande system har rätt scope
+(t.ex. <code class="language-plaintext highlighter-rouge">system/Condition.read</code>). Extraherar HoS-person, vårdgivare och vårdsyfte
+ur JWT-claims och gör dessa tillgängliga för bryggtjänsten.</p>
+
+<h3 id="fhir-server-spring-boot--hapi-fhir">fhir-server (Spring Boot + HAPI FHIR)</h3>
+
+<p>Kärnan i FHIR-laget. Tar emot och validerar FHIR-förfrågningar, extraherar VG-kontexten
+från <code class="language-plaintext highlighter-rouge">X-VG-HSA-ID</code>-headern och driver anropsflödet:</p>
+
+<ol>
+  <li>Slår upp konfigurerad FHIR-endpoint för VG:n i <code class="language-plaintext highlighter-rouge">vg-config.yaml</code></li>
+  <li>Frågar EI om patienten har data registrerat hos VG:ns system</li>
+  <li>Anropar ntjp-proxy via HTTP/FHIR för varje VG-endpoint</li>
+  <li>Filtrerar svaret mot Säkerhetstjänsten (spärr, organisationsnivå)</li>
+  <li>Loggar åtkomsten (ATNA/BALP)</li>
+  <li>Returnerar sammansatt <code class="language-plaintext highlighter-rouge">Bundle</code> till konsumenten</li>
+</ol>
+
+<h3 id="ntjp-proxy-spring-boot--apache-cxf">ntjp-proxy (Spring Boot + Apache CXF)</h3>
+
+<p>Separat tjänst (port 8091) som äger all RIVTA SOAP-logik. Tar emot FHIR-förfrågningar
+från fhir-server och returnerar FHIR-resurser, men utför internt:</p>
+
+<ol>
+  <li>Konverterar FHIR-frågeparametrar till SOAP-request (URI → OID via <code class="language-plaintext highlighter-rouge">NamingSystemRegistry</code>)</li>
+  <li>Anropar NTjP/VP med mTLS och korrekt <code class="language-plaintext highlighter-rouge">LogicalAddress</code> + <code class="language-plaintext highlighter-rouge">x-rivta-original-serviceconsumer-hsaid</code></li>
+  <li>Mappar SOAP-svar till FHIR-resurser + Provenance-poster (via <code class="language-plaintext highlighter-rouge">GetDiagnosisMapper</code>)</li>
+  <li>Returnerar en lokal <code class="language-plaintext highlighter-rouge">Bundle</code> med <code class="language-plaintext highlighter-rouge">searchMode=match</code> (Condition) och <code class="language-plaintext highlighter-rouge">searchMode=include</code> (Provenance)</li>
+</ol>
+
+<p>Gränssnittet mot fhir-server är rent FHIR HTTP — fhir-server vet inte om endpointen är
+ntjp-proxy eller ett nativt FHIR-API. Det styrs enbart av <code class="language-plaintext highlighter-rouge">fhirEndpointUrl</code> i <code class="language-plaintext highlighter-rouge">vg-config.yaml</code>.</p>
+
+<h3 id="mapping-engine-maven-bibliotek">mapping-engine (Maven-bibliotek)</h3>
+
+<p>Delat bibliotek som innehåller:</p>
+
+<ul>
+  <li>RIVTA JAXB-typer (<code class="language-plaintext highlighter-rouge">mapping/rivta/</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">NamingSystemRegistry</code> — OID ↔ URI-mappning, inkl. HL7 Sweden basprofiler-r4</li>
+  <li><code class="language-plaintext highlighter-rouge">ConceptMapRegistry</code> — RIVTA-kod → FHIR-kod (t.ex. diagnostyp → category)</li>
+  <li><code class="language-plaintext highlighter-rouge">GetDiagnosisMapper</code> / <code class="language-plaintext highlighter-rouge">GetDocumentListMapper</code> — TK-specifik mappningslogik</li>
+  <li><code class="language-plaintext highlighter-rouge">MappedDiagnosisEntry</code> — record som håller <code class="language-plaintext highlighter-rouge">(Condition, Provenance)</code> länkade genom pipelinen</li>
+</ul>
+
+<h3 id="ei-engagemangsindex">EI (Engagemangsindex)</h3>
+
+<p>Ineras index över vilka patienter som har data i vilka system. Används för att bekräfta
+att VG:ns system har information om patienten innan SOAP-anropet görs — sparar onödiga
+anrop till producenten.</p>
+
+<h3 id="ntjp--vp-nationell-tjänsteplattform--virtuell-producent">NTjP / VP (Nationell Tjänsteplattform / Virtuell Producent)</h3>
+
+<p>Routar SOAP-anropet till rätt producent baserat på tjänstekontrakt och logisk adress.
+SOAP-klienten skickar VG:ns HSA-id som logisk adress; NTjP resolver den fysiska adressen.</p>
+
+<h3 id="säkerhetstjänsten-spärr">Säkerhetstjänsten (Spärr)</h3>
+
+<p>Post-query-filtrering: körs efter att SOAP-svaret mappats till FHIR-resurser, på fhir-server-sidan.
+Sparrtjänsten kontrollerar yttre spärr (<code class="language-plaintext highlighter-rouge">careProviderHSAId</code>, organisationsnivå) och inre spärr
+(<code class="language-plaintext highlighter-rouge">careUnitHSAId</code>, avdelningsnivå). Identifierarna läses från <code class="language-plaintext highlighter-rouge">Provenance.agent</code>:
+<code class="language-plaintext highlighter-rouge">careProviderHSAId</code> som <code class="language-plaintext highlighter-rouge">agent[role=custodian]</code> (juridiskt ansvarig) och
+<code class="language-plaintext highlighter-rouge">careUnitHSAId</code> som <code class="language-plaintext highlighter-rouge">agent[role=author]</code> (informationsägare). Varken
+<code class="language-plaintext highlighter-rouge">careProviderHSAId</code> eller <code class="language-plaintext highlighter-rouge">careUnitHSAId</code> placeras som extension inne i FHIR-resursen.</p>
+
+<p>Spärrkontrollen är synkron och sker per unikt <code class="language-plaintext highlighter-rouge">(careProviderHSAId, careUnitHSAId)</code>-par i svaret
+(cachelagrat per request). Fail-closed gäller: saknas giltig Provenance eller misslyckas
+anropet till spärrtjänsten filtreras posten bort.</p>
+
+<p><a name="l910">​</a><strong>PoC-begränsning:</strong> En vårdgivare från en spärrad enhet som ändå har rätt att ta del av
+informationen (t.ex. nödsituationer, break-the-glass) hanteras inte. Se <a href="#kanda-begransningar">Kända begränsningar</a>.</p>
+
+<h3 id="loggtjänst-atnabalp">Loggtjänst (ATNA/BALP)</h3>
+
+<p>Åtkomstloggning i ATNA/BALP-format. Logganropet sker fire-and-forget efter att
+Bundle levererats till klienten.</p>
+
+<h2 id="anropsflöde">Anropsflöde</h2>
+
+<h3 id="vg-scopat-anrop-get-fhirvg-hsa-idcondition">VG-scopat anrop: GET /fhir/{vg-hsa-id}/Condition</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Konsument        Gateway       fhir-server        ntjp-proxy        Inera / VG
+    |                |               |                  |                |
+    |-- GET /fhir/   |               |                  |                |
+    |   {vg-hsa-id}/ |               |                  |                |
+    |   Condition?   |               |                  |                |
+    |   patient={pnr}→               |                  |                |
+    |                |-- X-VG-HSA-ID |                  |                |
+    |                |   + routing  →|                  |                |
+    |                |               |                  |                |
+    |          [JWT-validering, scope: system/Condition.read — planerat]
+    |                |               |                  |                |
+    |                |               |-- EI: finns data?→               |
+    |                |               |←-- ja/nej ------------------------|
+    |                |               |                  |                |
+    |                |               |-- GET Condition? →               |
+    |                |               |   (FHIR HTTP)    |               |
+    |                |               |                  |-- SOAP        |
+    |                |               |                  |   GetDiagnosis:2
+    |                |               |                  |              →| (NTjP/VP)
+    |                |               |                  |               |→ Producent
+    |                |               |                  |               |←- SOAP-svar
+    |                |               |                  |←-- SOAP-svar --|
+    |                |               |                  |                |
+    |                |               |              [Mappning SOAP→FHIR  |
+    |                |               |               Condition+Provenance]
+    |                |               |←-- Bundle (match+include) --------|
+    |                |               |                  |                |
+    |                |           [pair Condition↔Provenance via target]
+    |                |               |                  |                |
+    |                |           [Spärr: careProviderHSAId               |
+    |                |            (organisationsnivå)]  |                |
+    |                |               |                  |                |
+    |                |           [Åtkomstlogg ATNA/BALP]                 |
+    |                |               |                  |                |
+    |←-- 200 OK -----|←-- Bundle ----|                  |                |
+</code></pre></div></div>
+
+<p><strong>Viktigt:</strong> ett VG-scopat anrop resulterar i exakt ett SOAP-anrop till exakt en
+logisk adress. Bryggan aggregerar inte data över VG-gränser. En producent kan ha
+data från flera vårdenheter inom samma VG — dessa inkluderas alla, men data som
+tillhör andra VG:er i samma producentsystem filtreras bort av spärrkomponenten.</p>
+
+<h2 id="provenance">Provenance</h2>
+
+<p>För varje Condition skapas en länkad Provenance-resurs som inkluderas i svaret med
+<code class="language-plaintext highlighter-rouge">Bundle.entry.search.mode = include</code>. Provenance följer IHE QEDm-mönstret och innehåller
+tre agentroller:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Agent-roll</th>
+      <th>Källa</th>
+      <th>Syfte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">custodian</code></td>
+      <td><code class="language-plaintext highlighter-rouge">careProviderHSAId</code></td>
+      <td>Juridiskt ansvarig vårdgivare (organisationsnivå, används av Sparrtjänsten)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">author</code></td>
+      <td><code class="language-plaintext highlighter-rouge">careUnitHSAId</code></td>
+      <td>Informationsägare vårdenhet som förvaltar journalposten</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">assembler</code></td>
+      <td><code class="language-plaintext highlighter-rouge">EHDS_BRIDGE_HSA_ID</code> (env-variabel)</td>
+      <td>EHDS-bryggan som sammansatte FHIR-bundlen</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">Provenance.target</code> pekar på <code class="language-plaintext highlighter-rouge">urn:uuid:{Condition.id}</code>. <code class="language-plaintext highlighter-rouge">MappedDiagnosisEntry</code> håller
+Condition och Provenance länkade som ett par genom hela pipelinen, inklusive Sparr-filtret —
+om en Condition filtreras bort tas även dess Provenance bort.</p>
+
+<h2 id="mappningsmotor">Mappningsmotor</h2>
+
+<p>Tvåfas, tre-lagers-arkitektur, implementerad i <code class="language-plaintext highlighter-rouge">mapping-engine</code>-modulen:</p>
+
+<h3 id="fas-1-fhir--soap-begäran">Fas 1: FHIR → SOAP (begäran)</h3>
+
+<p>Lager 3 (TK-specifik mappningsklass) + Lager 1 (RIVTA JAXB-typer) + Lager 2a (NamingSystem)
+konstruerar SOAP-begäranstrukturen från FHIR-frågeparametrarna.
+<code class="language-plaintext highlighter-rouge">NamingSystemRegistry.uriToOid()</code> konverterar t.ex. <code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/personnummer</code>
+→ <code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code>.</p>
+
+<h3 id="fas-2-soap--fhir-svar">Fas 2: SOAP → FHIR (svar)</h3>
+
+<p>Lager 3 + Lager 1 + Lager 2a + Lager 2b (ConceptMap) producerar FHIR-resurser + Provenance
+från SOAP-svarets element. <code class="language-plaintext highlighter-rouge">NamingSystemRegistry.oidToUri()</code> konverterar OID:er till
+kanoniska URI:er (HL7 Sweden basprofiler-r4).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lager</th>
+      <th>Innehåll</th>
+      <th>Klass/fil</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>RIVTA JAXB-typer: <code class="language-plaintext highlighter-rouge">CVType</code>, <code class="language-plaintext highlighter-rouge">PersonIdType</code>, <code class="language-plaintext highlighter-rouge">DatePeriodType</code> m.fl.</td>
+      <td><code class="language-plaintext highlighter-rouge">mapping/rivta/</code>, <code class="language-plaintext highlighter-rouge">mapping/rivta/doclist/</code></td>
+    </tr>
+    <tr>
+      <td>2a</td>
+      <td>OID ↔ FHIR URI (bidirektionell): <code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code> ↔ personnummer-URI</td>
+      <td><code class="language-plaintext highlighter-rouge">NamingSystemRegistry</code> / <code class="language-plaintext highlighter-rouge">naming-systems.yaml</code></td>
+    </tr>
+    <tr>
+      <td>2b</td>
+      <td>Kod ↔ kod: RIVTA diagnosTyp → FHIR <code class="language-plaintext highlighter-rouge">category</code></td>
+      <td><code class="language-plaintext highlighter-rouge">ConceptMapRegistry</code> / <code class="language-plaintext highlighter-rouge">concept-maps.yaml</code></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>TK-specifik logik per tjänstekontrakt</td>
+      <td><code class="language-plaintext highlighter-rouge">GetDiagnosisMapper</code>, <code class="language-plaintext highlighter-rouge">GetDocumentListMapper</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="lägga-till-ett-nytt-tjänstekontrakt">Lägga till ett nytt tjänstekontrakt</h2>
+
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">vg-config.yaml</code></strong> — se till att <code class="language-plaintext highlighter-rouge">fhirEndpointUrl</code> pekar på ntjp-proxy för de VG:er
+som ska använda det nya kontraktet</li>
+  <li><strong>Java-mappningsklass</strong> — implementera mappningslogiken (lager 3) i <code class="language-plaintext highlighter-rouge">mapping-engine</code>;
+returnera <code class="language-plaintext highlighter-rouge">List&lt;MappedDiagnosisEntry&gt;</code> (eller motsvarande record med resurs + Provenance)</li>
+  <li><strong>JAXB-typer</strong> — lägg till kontraktets XML-typer i <code class="language-plaintext highlighter-rouge">mapping/rivta/</code> (lager 1)</li>
+  <li><strong>ntjp-proxy controller</strong> — registrera en ny <code class="language-plaintext highlighter-rouge">@RestController</code> i ntjp-proxy som
+tar emot FHIR-frågan, anropar SOAP via <code class="language-plaintext highlighter-rouge">soap-client</code> och returnerar en lokal Bundle</li>
+  <li><strong>ProxyBeanConfig</strong> — registrera eventuellt ny SOAP-tjänsteklient (CXF)</li>
+  <li><strong>FHIR-profil</strong> — ny FSH-profil i denna IG + mappningssida</li>
+</ol>
+
+<p>Ingen ändring i Gateway, fhir-server-orkestrerare eller HAPI-konfiguration behövs.</p>
+
+<h2 id="säkerhet-och-dataskydd">Säkerhet och dataskydd</h2>
+
+<h3 id="autentisering-och-auktorisation">Autentisering och auktorisation</h3>
+
+<ul>
+  <li>Inkommande klienter autentiseras via OAuth 2.0 / SMART on FHIR <em>(JWT-validering planerat)</em></li>
+  <li>Anrop till NTjP autentiseras med SITHS-certifikat (mTLS, RIVTA BP 2.1)</li>
+  <li>Bryggan agerar som teknisk aktör med eget HSA-id (<code class="language-plaintext highlighter-rouge">SE2321000999-EHDS</code>) mot NTjP</li>
+</ul>
+
+<h3 id="åtkomstkontroll">Åtkomstkontroll</h3>
+
+<ul>
+  <li>Post-query: spärrtjänsten filtrerar svar <em>efter</em> SOAP-anrop och mappning</li>
+  <li>Fail-closed: saknas giltig Provenance, ogiltigt HSA-id eller infrastrukturfel filtreras posten bort</li>
+  <li>Yttre spärr: <code class="language-plaintext highlighter-rouge">careProviderHSAId</code> (organisationsnivå) från <code class="language-plaintext highlighter-rouge">Provenance.agent[role=custodian]</code></li>
+  <li>Inre spärr: <code class="language-plaintext highlighter-rouge">careUnitHSAId</code> (avdelningsnivå) från <code class="language-plaintext highlighter-rouge">Provenance.agent[role=author]</code></li>
+</ul>
+
+<h3 id="loggning-pdl--atnabalp">Loggning (PDL / ATNA/BALP)</h3>
+
+<p>Alla åtkomster loggas med patientidentifierare, aktör, tidpunkt och ändamål.
+Loggposter skickas till Ineras loggtjänst i ATNA/BALP-format.</p>
+
+<h2 id="driftsättning">Driftsättning</h2>
+
+<p>Bryggan driftsätts som <strong>två huvud-containers</strong> i Kubernetes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">gateway</code> — NGINX (PoC), TLS-terminering, multi-tenant URL-routing</li>
+  <li><code class="language-plaintext highlighter-rouge">bryggtjänst</code> — innehåller fhir-server och ntjp-proxy med delad mapping-engine</li>
+</ul>
+
+<p>De tre interna modulerna (<code class="language-plaintext highlighter-rouge">fhir-server</code>, <code class="language-plaintext highlighter-rouge">ntjp-proxy</code>, <code class="language-plaintext highlighter-rouge">mapping-engine</code>) kan vid behov
+deployeras som separata pods, t.ex. för att köra ntjp-proxy nära en specifik VG.</p>
+
+<p>I lokal utveckling tillkommer fem mock-containers (TAK, EI, Spärr, Logg, Backend-SOAP)
+via <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> i projektets rot.</p>
+
+<h2 id="kända-begränsningar">Kända begränsningar</h2>
+
+<h3 id="break-the-glass">Break-the-glass</h3>
+
+<p>En vårdgivare som tillhör en spärrad enhet men ändå har rätt att ta del av informationen
+(t.ex. nödsituationer) hanteras inte. Denna logik kräver kontextinformation om inloggad
+användares behörighet och är out of scope för PoC:en. EHDS-bryggan applicerar alla spärrar
+utan undantag.</p>
+
+<h3 id="documentreference-provenance">DocumentReference: Provenance</h3>
+
+<p>Sparr-filtret körs på organisationsnivå (<code class="language-plaintext highlighter-rouge">careProviderHSAId</code>) för både Condition och
+DocumentReference. Däremot skapas inga Provenance-resurser för DocumentReference-poster –
+hela kedjan (author/custodian/assembler) som finns för Condition saknas. Detta är en känd
+PoC-begränsning.</p>
+
+
+
+
+</div>
+        </div>    <!-- /inner-wrapper -->
+      </div>    <!-- /row -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-content -->
+
+  <script src="assets/js/jquery.js" type="text/javascript"> </script>       <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script src="assets/js/jquery-ui.min.js" type="text/javascript"> </script>
+
+  <script src="assets/js/window-hash.js" type="text/javascript"> </script>
+  <a name="bottom"> </a>
+  <div igtool="footer" id="segment-footer" class="segment">    <!-- segment-footer -->
+    <div class="container">    <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &copy; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package se.ehds.brygga#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 18:55+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>    <!-- /inner-wrapper -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">    <!-- segment-post-footer -->
+    <div class="container">    <!-- container -->
+    </div>    <!-- /container -->
+  </div>    <!-- /segment-post-footer -->
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+  ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="assets/js/bootstrap.min.js" type="text/javascript"> </script>
+  <script src="assets/js/respond.min.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard.min.js" type="text/javascript"> </script>
+  <script src="assets/js/clipboard-btn.js" type="text/javascript"> </script>
+  <script src="assets/js/anchor-hover.js" type="text/javascript"> </script>
+    <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>

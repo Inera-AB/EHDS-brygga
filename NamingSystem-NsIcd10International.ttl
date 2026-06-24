@@ -1,0 +1,62 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/NamingSystem/NsIcd10International> a fhir:NamingSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "NsIcd10International"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: NamingSystem NsIcd10International</b></p><a name=\"NsIcd10International\"> </a><a name=\"hcNsIcd10International\"> </a><h3>Sammanfattning</h3><table class=\"grid\"><tr><td>Definierande URL</td><td>https://fhir.inera.se/NamingSystem/NsIcd10International</td></tr><tr><td>Version</td><td>0.1.0</td></tr><tr><td>Namn</td><td>NsIcd10International</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>Definition</td><td><div><p>ICD-10 internationell version (OID 2.16.840.1.113883.6.3) utgiven av WHO. Används när diagnoskodsystemets OID inte är det svenska (1.2.752.116.1.1.1.1.3).</p>\n</div></td></tr><tr><td>Utgivare</td><td>Inera AB</td></tr></table><h3>Identifierare</h3><table class=\"grid\"><tr><td><b>Typ</b></td><td><b>Värde</b></td><td><b>Föredragen</b></td></tr><tr><td>OID</td><td>2.16.840.1.113883.6.3</td><td/></tr><tr><td>URI</td><td>http://hl7.org/fhir/sid/icd-10</td><td>true</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.url"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:uri ;
+       fhir:v "https://fhir.inera.se/NamingSystem/NsIcd10International"^^xsd:anyURI
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version"^^xsd:anyURI ] ;
+     fhir:value [
+       a fhir:string ;
+       fhir:v "0.1.0"
+     ]
+  ] ) ; # 
+  fhir:name [ fhir:v "NsIcd10International"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:kind [ fhir:v "codesystem"] ; # 
+  fhir:date [ fhir:v "2024-01-01"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "oskar.thunman@inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "ICD-10 internationell version (OID 2.16.840.1.113883.6.3) utgiven av WHO. Används när diagnoskodsystemets OID inte är det svenska (1.2.752.116.1.1.1.1.3)."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:uniqueId ( [
+     fhir:type [ fhir:v "oid" ] ;
+     fhir:value [ fhir:v "2.16.840.1.113883.6.3" ]
+  ] [
+     fhir:type [ fhir:v "uri" ] ;
+     fhir:value [ fhir:v "http://hl7.org/fhir/sid/icd-10" ] ;
+     fhir:preferred [ fhir:v true ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

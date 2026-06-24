@@ -1,0 +1,140 @@
+[{
+  "id" : "DiagnosisTypeToCategoryMap",
+  "type" : "ConceptMap",
+  "url" : "https://fhir.inera.se/ConceptMap/DiagnosisTypeToCategoryMap",
+  "version" : "0.1.0",
+  "name" : "DiagnosisTypeToCategoryMap"
+},
+{
+  "id" : "se.ehds.brygga",
+  "type" : "ImplementationGuide",
+  "url" : "https://fhir.inera.se/ImplementationGuide/se.ehds.brygga",
+  "version" : "0.1.0",
+  "name" : "SEEHDSBrygga"
+},
+{
+  "id" : "NsForskrivarkod",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsForskrivarkod",
+  "version" : "0.1.0",
+  "name" : "NsForskrivarkod"
+},
+{
+  "id" : "NsHospYrken",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsHospYrken",
+  "version" : "0.1.0",
+  "name" : "NsHospYrken"
+},
+{
+  "id" : "NsHsaIdBasprofil",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsHsaIdBasprofil",
+  "version" : "0.1.0",
+  "name" : "NsHsaIdBasprofil"
+},
+{
+  "id" : "NsHsaIdInera",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsHsaIdInera",
+  "version" : "0.1.0",
+  "name" : "NsHsaIdInera"
+},
+{
+  "id" : "NsIcd10International",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsIcd10International",
+  "version" : "0.1.0",
+  "name" : "NsIcd10International"
+},
+{
+  "id" : "NsIcd10Se",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsIcd10Se",
+  "version" : "0.1.0",
+  "name" : "NsIcd10Se"
+},
+{
+  "id" : "NsKva",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsKva",
+  "version" : "0.1.0",
+  "name" : "NsKva"
+},
+{
+  "id" : "NsLegitimationsnummer",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsLegitimationsnummer",
+  "version" : "0.1.0",
+  "name" : "NsLegitimationsnummer"
+},
+{
+  "id" : "NsPersonnummer",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsPersonnummer",
+  "version" : "0.1.0",
+  "name" : "NsPersonnummer"
+},
+{
+  "id" : "NsSamordningsnummer",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsSamordningsnummer",
+  "version" : "0.1.0",
+  "name" : "NsSamordningsnummer"
+},
+{
+  "id" : "NsSnomedCt",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsSnomedCt",
+  "version" : "0.1.0",
+  "name" : "NsSnomedCt"
+},
+{
+  "id" : "NsSosnyk",
+  "type" : "NamingSystem",
+  "url" : "https://fhir.inera.se/NamingSystem/NsSosnyk",
+  "version" : "0.1.0",
+  "name" : "NsSosnyk"
+},
+{
+  "id" : "ext-asserted-date",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/StructureDefinition/ext-asserted-date",
+  "version" : "0.1.0",
+  "name" : "ExtAssertedDate"
+},
+{
+  "id" : "se-ehds-condition",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/StructureDefinition/se-ehds-condition",
+  "version" : "0.1.0",
+  "name" : "SEEHDSCondition"
+},
+{
+  "id" : "se-ehds-document-reference",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/StructureDefinition/se-ehds-document-reference",
+  "version" : "0.1.0",
+  "name" : "SEEHDSDocumentReference"
+},
+{
+  "id" : "se-ehds-patient",
+  "type" : "StructureDefinition",
+  "url" : "https://fhir.inera.se/StructureDefinition/se-ehds-patient",
+  "version" : "0.1.0",
+  "name" : "SEEHDSPatient"
+},
+{
+  "id" : "SEDiagnosisType",
+  "type" : "ValueSet",
+  "url" : "https://fhir.inera.se/ValueSet/SEDiagnosisType",
+  "version" : "0.1.0",
+  "name" : "SEDiagnosisTypeVS"
+},
+{
+  "id" : "DiagnosisTypeCS",
+  "type" : "CodeSystem",
+  "url" : "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp",
+  "version" : "0.1.0",
+  "name" : "DiagnosisTypeCS"
+}]

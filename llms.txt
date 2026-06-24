@@ -1,0 +1,58 @@
+# se.ehds.brygga#0.1.0: SE EHDS Brygga Implementation Guide
+
+## Pages
+
+* [Hem](index.md)
+* [Mappning: GetDocumentList → DocumentReference](mapping-getdocumentlist.md)
+* [Nedladdningar](downloads.md)
+* [OID-till-URI-mappningar](naming-systems.md)
+* [Mappning: GetDiagnosis → Condition](mapping-getdiagnosis.md)
+* [Artefakter](artifacts.md)
+* [Arkitektur](architecture.md)
+
+## Resources
+
+### CodeSystems
+
+* [Diagnos Typ (kv_diagnostyp)](CodeSystem-DiagnosisTypeCS.md)
+
+### ValueSets
+
+* [SE Diagnos Typ](ValueSet-SEDiagnosisType.md)
+
+### Resource Profiles
+
+* [SE EHDS Condition](StructureDefinition-se-ehds-condition.md)
+* [SE EHDS DocumentReference](StructureDefinition-se-ehds-document-reference.md)
+* [SE EHDS Patient](StructureDefinition-se-ehds-patient.md)
+
+### Extensions
+
+* [Asserted Date](StructureDefinition-ext-asserted-date.md)
+
+### ConceptMaps
+
+* [DiagnosisType → Condition.category](ConceptMap-DiagnosisTypeToCategoryMap.md)
+
+### ImplementationGuides
+
+* [SE EHDS Brygga Implementation Guide](index.md)
+
+### NamingSystems
+
+* [NsForskrivarkod](NamingSystem-NsForskrivarkod.md)
+* [NsHospYrken](NamingSystem-NsHospYrken.md)
+* [NsHsaIdBasprofil](NamingSystem-NsHsaIdBasprofil.md)
+* [NsHsaIdInera](NamingSystem-NsHsaIdInera.md)
+* [NsIcd10International](NamingSystem-NsIcd10International.md)
+* [NsIcd10Se](NamingSystem-NsIcd10Se.md)
+* [NsKva](NamingSystem-NsKva.md)
+* [NsLegitimationsnummer](NamingSystem-NsLegitimationsnummer.md)
+* [NsPersonnummer](NamingSystem-NsPersonnummer.md)
+* [NsSamordningsnummer](NamingSystem-NsSamordningsnummer.md)
+* [NsSnomedCt](NamingSystem-NsSnomedCt.md)
+* [NsSosnyk](NamingSystem-NsSosnyk.md)
+
+### Examples
+
+* [SEEHDSPatientExample (Patient)](Patient-SEEHDSPatientExample.md)

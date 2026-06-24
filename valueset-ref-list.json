@@ -1,0 +1,28 @@
+{
+  "codeSystems" : [{
+    "url" : "http://hl7.org/fhir/ValueSet/c80-doc-typecodes",
+    "version" : "4.0.1",
+    "status" : "active",
+    "name" : "DocumentTypeValueSet",
+    "title" : "Document Type Value Set",
+    "description" : "This is the code specifying the precise type of document (e.g. Pulmonary History and  Physical, Discharge Summary, Ultrasound Report, etc.). The Document Type value set includes all LOINC  values listed in HITSP C80 Table 2-144 Document Class Value Set Definition above used for Document Class,  and all LOINC values whose SCALE is DOC in the LOINC database.",
+    "systems" : ["http://loinc.org"],
+    "oids" : ["2.16.840.1.113883.3.88.12.80.47"],
+    "sources" : ["2.16.840.1.113883.3.88.12.80.47"],
+    "uses" : {
+    },
+    "StructureDefinition-se-ehds-document-reference.html" : "SE EHDS DocumentReference"
+  },
+  {
+    "url" : "https://fhir.inera.se/ValueSet/SEDiagnosisType",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "SEDiagnosisTypeVS",
+    "title" : "SE Diagnos Typ",
+    "description" : "ValueSet med Ineras diagnostyper (HD/BY) från kv_diagnostyp på terminologitjänsten.\nAnvänds i Condition.category[diagnostyp] för att ange diagnostyp enligt\nIneras RIVTA-tjänstekontrakt GetDiagnosis:2.",
+    "systems" : ["https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"],
+    "uses" : {
+    },
+    "StructureDefinition-se-ehds-condition.html" : "SE EHDS Condition"
+  }]
+}

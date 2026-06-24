@@ -1,0 +1,73 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ConceptMap/DiagnosisTypeToCategoryMap> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DiagnosisTypeToCategoryMap"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: ConceptMap DiagnosisTypeToCategoryMap</b></p><a name=\"DiagnosisTypeToCategoryMap\"> </a><a name=\"hcDiagnosisTypeToCategoryMap\"> </a><p>Mappning från <a href=\"CodeSystem-DiagnosisTypeCS.html\">https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</a> till <a href=\"CodeSystem-DiagnosisTypeCS.html\">https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</a></p><br/><p>Mappning från <a href=\"CodeSystem-DiagnosisTypeCS.html\">Diagnos Typ (kv_diagnostyp)</a> to <a href=\"CodeSystem-DiagnosisTypeCS.html\">Diagnos Typ (kv_diagnostyp)</a></p><table class=\"grid\"><tr><td><b>Källkod</b></td><td><b>Relation</b></td><td><b>Målkod</b></td></tr><tr><td>HD (Huvuddiagnos)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>HD (Huvuddiagnos)</td></tr><tr><td>BY (Bidiagnos)</td><td><a href=\"http://hl7.org/fhir/R5/codesystem-concept-map-relationship.html#equal\" title=\"equal\">is equal to</a></td><td>BY (Bidiagnos)</td></tr></table></div>"^^rdf:XMLLiteral ]
+  ] ; # 
+  fhir:url [ fhir:v "https://fhir.inera.se/ConceptMap/DiagnosisTypeToCategoryMap"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.0"] ; # 
+  fhir:name [ fhir:v "DiagnosisTypeToCategoryMap"] ; # 
+  fhir:title [ fhir:v "DiagnosisType → Condition.category"] ; # 
+  fhir:status [ fhir:v "draft"] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2026-06-24T18:55:38+00:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "Inera AB"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "Inera AB" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "https://www.inera.se" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "oskar.thunman@inera.se" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Mappning av RIVTA diagnosisType (HD/BY) från kv_diagnostyp till FHIR Condition.category[diagnostyp]"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "SE" ] ;
+       fhir:display [ fhir:v "Sweden" ]
+     ] )
+  ] ) ; # 
+  fhir:source [
+     a fhir:uri ;
+     fhir:v "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"^^xsd:anyURI
+  ] ; # 
+  fhir:target [
+     a fhir:uri ;
+     fhir:v "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"^^xsd:anyURI
+  ] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "HD" ] ;
+       fhir:display [ fhir:v "Huvuddiagnos" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "HD" ] ;
+         fhir:display [ fhir:v "Huvuddiagnos" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "BY" ] ;
+       fhir:display [ fhir:v "Bidiagnos" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "BY" ] ;
+         fhir:display [ fhir:v "Bidiagnos" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

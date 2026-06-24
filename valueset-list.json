@@ -1,0 +1,11 @@
+{
+  "codeSystems" : [{
+    "url" : "https://fhir.inera.se/ValueSet/SEDiagnosisType",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "SEDiagnosisTypeVS",
+    "title" : "SE Diagnos Typ",
+    "description" : "ValueSet med Ineras diagnostyper (HD/BY) från kv_diagnostyp på terminologitjänsten.\nAnvänds i Condition.category[diagnostyp] för att ange diagnostyp enligt\nIneras RIVTA-tjänstekontrakt GetDiagnosis:2.",
+    "systems" : ["https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"]
+  }]
+}

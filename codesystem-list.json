@@ -1,0 +1,10 @@
+{
+  "codeSystems" : [{
+    "url" : "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "DiagnosisTypeCS",
+    "title" : "Diagnos Typ (kv_diagnostyp)",
+    "description" : "Ineras kodverk för diagnostyp (kv_diagnostyp) hämtat från terminologitjänsten.\nAnger om en diagnos är huvud- eller bidiagnos enligt Ineras RIVTA-tjänstekontrakt GetDiagnosis:2.\nKoderna HD och BY används direkt som värden i FHIR Condition.category."
+  }]
+}

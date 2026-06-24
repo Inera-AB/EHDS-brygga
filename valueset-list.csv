@@ -1,0 +1,2 @@
+URL,Version,Status,OIDs,Name,Title,Description,Uses,Used,Sources
+https://fhir.inera.se/ValueSet/SEDiagnosisType,0.1.0,draft,,SEDiagnosisTypeVS,SE Diagnos Typ,"ValueSet med Ineras diagnostyper (HD/BY) från kv_diagnostyp på terminologitjänsten. Används i Condition.category[diagnostyp] för att ange diagnostyp enligt Ineras RIVTA-tjänstekontrakt GetDiagnosis:2.",,"Internal"

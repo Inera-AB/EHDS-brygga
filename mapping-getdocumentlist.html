@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mappning: GetDocumentList → DocumentReference - SE EHDS Brygga Implementation Guide v0.1.0</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="inera.css" rel="stylesheet"/>
+<link rel="icon" type="image/png" href="inera-thumbnail.png"/>
+<link rel="shortcut icon" href="inera-thumbnail.png"/>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"3"}
+    h3,h4,h5,h6{--heading-prefix:"3"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+
+        <div id="inera-nav">
+  <a id="inera-logo" data-no-external="true" href="https://www.inera.se">
+    <img height="50" alt="Inera" src="inera-logo-header.svg"/>
+  </a>
+</div>
+
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">SE EHDS Brygga Implementation Guide</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0 - ci-build
+
+
+
+  <img alt="Sweden flag" src="assets/images/swe.svg" height="16" title="Sweden"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <div id="segment-navbar" class="segment">
+  <div id="stripe"> </div>
+  <div class="container">
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+          <span class="icon-bar"> </span>
+        </button>
+        <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+        <div class="nav-collapse collapse navbar-inverse-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Hem</a></li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" href="#" class="dropdown-toggle">Mappningar<b class="caret"> </b></a>
+              <ul class="dropdown-menu">
+                <li><a href="mapping-getdiagnosis.html">GetDiagnosis → Condition</a></li>
+                <li><a href="mapping-getdocumentlist.html">GetDocumentList → DocumentReference</a></li>
+              </ul>
+            </li>
+            <li><a href="naming-systems.html">OID-mappningar</a></li>
+            <li><a href="architecture.html">Arkitektur</a></li>
+            <li><a href="artifacts.html">Artefakter</a></li>
+            <li><a href="downloads.html">Nedladdningar</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><b>Mappning: GetDocumentList → DocumentReference</b></li>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<style type="text/css">
+h2:before{color:silver;counter-increment:section;content:var(--heading-prefix) " ";}
+h3:before{color:silver;counter-increment:sub-section;content:var(--heading-prefix) "." counter(sub-section) " ";}
+h4:before{color:silver;counter-increment:composite;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) " ";}
+h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) " ";}
+h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
+</style>
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">SE EHDS Brygga Implementation Guide - Lokal utvecklingsbygge (v0.1.0) byggt av FHIR (HL7® FHIR® Standard) Build Tools. Se <a href='https://fhir.inera.se/history.html'>katalogen över publicerade versioner</a></p><!--EndReleaseHeader-->
+  <h2>Mappning: GetDocumentList → DocumentReference</h2>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    <p><!-- white space is critical inside of capture --></p>
+<div>
+<!-- do not remove - needed to prevent Jekyll from adding a p tag to any non block level element in the markdown.-->
+</div>
+<h1 id="mappning-getdocumentlist--documentreference">Mappning: GetDocumentList → DocumentReference</h1>
+
+<h2 id="tjänstekontrakt">Tjänstekontrakt</h2>
+<p><strong>RIVTA-kontrakt:</strong> <code class="language-plaintext highlighter-rouge">urn:riv:clinicalprocess:healthrecord:GetDocumentListResponder:1</code><br />
+<strong>FHIR-resurstyp:</strong> <code class="language-plaintext highlighter-rouge">DocumentReference</code> (profil: <code class="language-plaintext highlighter-rouge">se-ehds-document-reference</code>) + <code class="language-plaintext highlighter-rouge">Provenance</code></p>
+
+<h2 id="fältmappning">Fältmappning</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-element</th>
+      <th>FHIR-element</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.documentId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.masterIdentifier.value</code></td>
+      <td>Unik dokumentidentifierare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.title</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.description</code></td>
+      <td>Dokumenttitel i klartext</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.documentTime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.date</code></td>
+      <td>ISO 8601 via parseRivDate</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.typeCode.code</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.type.coding.code</code></td>
+      <td>Dokumenttypskod</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.typeCode.codeSystem</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.type.coding.system</code></td>
+      <td>OID→URI via NamingSystemRegistry</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.typeCode.displayName</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.type.coding.display</code></td>
+      <td>Kodverkets officiella benämning</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.typeCode.originalText</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.type.text</code></td>
+      <td>Fritext från källsystemet; om saknad används <code class="language-plaintext highlighter-rouge">displayName</code> som fallback</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.patientId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.subject.identifier</code></td>
+      <td>Personnummer/samordningsnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.accountableHealthcareProfessional</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.author</code> (Reference(PractitionerRole))</td>
+      <td>Ansvarig hälso- och sjukvårdspersonal</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.legalAuthenticator</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.authenticator</code> (Reference(PractitionerRole))</td>
+      <td>Rättslig äkthetsintygsgivare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.careProviderHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[role=custodian].who.identifier</code></td>
+      <td>Juridiskt ansvarig vårdgivare – bärs <strong>enbart</strong> i Provenance</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.careUnitHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[role=author].who.identifier</code></td>
+      <td>Vårdenhet i Provenance</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">documentEntry.sourceSystemHSAId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">DocumentReference.meta.source</code></td>
+      <td>Källsystemets HSA-id som URI (urn:oid:{OID}#{hsaId})</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">statusCode == "active"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">status = current</code></td>
+      <td>Annars <code class="language-plaintext highlighter-rouge">superseded</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="healthcareprofessionaltype--practitionerrole">healthcareProfessionalType → PractitionerRole</h2>
+
+<p>Både <code class="language-plaintext highlighter-rouge">accountableHealthcareProfessional</code> och <code class="language-plaintext highlighter-rouge">legalAuthenticator</code> är av RIVTA-typen
+<code class="language-plaintext highlighter-rouge">healthcareProfessionalType</code>, som innehåller uppgifter om en person och deras yrkesroll
+vid tidpunkten för dokumentet. Dessa mappas till FHIR <code class="language-plaintext highlighter-rouge">PractitionerRole</code> som anges
+som logisk referens via HSA-identifierare.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RIVTA-underelement</th>
+      <th>FHIR PractitionerRole-fält</th>
+      <th>Kommentar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">healthcareProfessional.personId</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.identifier</code></td>
+      <td>HSA-id för personen</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">healthcareProfessional.personId.root</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.identifier.system</code></td>
+      <td>OID→URI via NamingSystemRegistry</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">roleAtTime</code></td>
+      <td><code class="language-plaintext highlighter-rouge">PractitionerRole.code</code></td>
+      <td>Yrkeskategori/roll vid tillfället</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="contentattachment--platshållare">content.attachment – platshållare</h2>
+
+<p><code class="language-plaintext highlighter-rouge">DocumentReference.content.attachment</code> sätts alltid med <code class="language-plaintext highlighter-rouge">contentType = application/pdf</code>
+och <code class="language-plaintext highlighter-rouge">title</code> från dokumentets titel. <strong>Ingen binär dokumentdata bäddas in.</strong></p>
+
+<p>RIVTA GetDocumentList:1 är ett <em>registeranrop</em> — det returnerar metadata om dokument,
+inte dokumentinnehållet. <code class="language-plaintext highlighter-rouge">attachment.data</code> och <code class="language-plaintext highlighter-rouge">attachment.url</code> lämnas tomma.
+För att hämta det faktiska dokumentet krävs ett separat anrop till producenten
+(t.ex. via GetDocument-kontraktet).</p>
+
+<h2 id="euridiceips-alignment">EURIDICE/IPS-alignment</h2>
+<p>Profilen <code class="language-plaintext highlighter-rouge">SEEHDSDocumentReference</code> alignar med EU EHDS dokumentspecifikationer
+och IHE-dokumentkategorier (LOINC c80-doc-typecodes).</p>
+
+<h2 id="oid-uri-mappningar">OID-URI-mappningar</h2>
+
+<p>Personnummer, samordningsnummer och HSA-id konverteras till kanoniska URI:er via <code class="language-plaintext highlighter-rouge">NamingSystemRegistry</code>.
+Se <a href="naming-systems.html">OID-till-URI-mappningar</a> för den kompletta tabellen.</p>
+
+<p>De OID:er som förekommer i GetDocumentList:1-svar:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>OID</th>
+      <th>URI</th>
+      <th>Beskrivning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/personnummer</code></td>
+      <td>Personnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.3.3</code></td>
+      <td><code class="language-plaintext highlighter-rouge">http://electronichealth.se/identifier/samordningsnummer</code></td>
+      <td>Samordningsnummer</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.129.2.1.4.1</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.129.2.1.4.1</code></td>
+      <td>HSA-id (Inera NTjP) — author, authenticator, meta.source, Provenance</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">1.2.752.29.4.19</code></td>
+      <td><code class="language-plaintext highlighter-rouge">urn:oid:1.2.752.29.4.19</code></td>
+      <td>HSA-id (HL7 Sweden basprofiler)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="provenance">Provenance</h2>
+
+<p>Varje <code class="language-plaintext highlighter-rouge">DocumentReference</code> åtföljs av en <code class="language-plaintext highlighter-rouge">Provenance</code>-resurs som bär den organisatoriska
+härkomsten. <code class="language-plaintext highlighter-rouge">careProviderHSAId</code> placeras <strong>enbart</strong> i Provenance och inte inne i
+<code class="language-plaintext highlighter-rouge">DocumentReference</code>-resursen.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provenance-fält</th>
+      <th>Källa</th>
+      <th>Roll</th>
+      <th>Semantik</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[0].type</code></td>
+      <td>–</td>
+      <td><code class="language-plaintext highlighter-rouge">custodian</code></td>
+      <td>Juridiskt ansvarig vårdgivare</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[0].who.identifier</code></td>
+      <td><code class="language-plaintext highlighter-rouge">careProviderHSAId</code></td>
+      <td>–</td>
+      <td>HSA-id för vårdgivaren</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[1].type</code></td>
+      <td>–</td>
+      <td><code class="language-plaintext highlighter-rouge">author</code></td>
+      <td>Informationsägare vårdenhet</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[1].who.identifier</code></td>
+      <td><code class="language-plaintext highlighter-rouge">careUnitHSAId</code></td>
+      <td>–</td>
+      <td>HSA-id för vårdenheten</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[2].type</code></td>
+      <td>–</td>
+      <td><code class="language-plaintext highlighter-rouge">assembler</code></td>
+      <td>EHDS-bryggan</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">agent[2].who.identifier</code></td>
+      <td><code class="language-plaintext highlighter-rouge">bridgeHsaId</code></td>
+      <td>–</td>
+      <td>Bryggans HSA-id</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="spärr-sparr">Spärr (Sparr)</h2>
+
+<p>Spärrkontrollen läser <code class="language-plaintext highlighter-rouge">careProviderHSAId</code> och <code class="language-plaintext highlighter-rouge">careUnitHSAId</code> från Provenance —
+samma mönster som Condition-flödet via <code class="language-plaintext highlighter-rouge">SparrFilterService</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fält</th>
+      <th>Källa</th>
+      <th>Syfte</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[custodian].who</code></td>
+      <td><code class="language-plaintext highlighter-rouge">careProviderHSAId</code></td>
+      <td>Yttre spärr (organisationsnivå)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">Provenance.agent[author].who</code></td>
+      <td><code class="language-plaintext highlighter-rouge">careUnitHSAId</code></td>
+      <td>Inre spärr (avdelningsnivå)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="poc-begränsningar">PoC-begränsningar</h2>
+
+<h3 id="binary-document-data">Binary document data</h3>
+<p>Binär dokumentdata hämtas inte; <code class="language-plaintext highlighter-rouge">attachment.data</code> och <code class="language-plaintext highlighter-rouge">attachment.url</code> är tomma.</p>
+
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="https://www.inera.se">Inera AB</a>.  Package se.ehds.brygga#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 24, 2026 18:55+0000">2026-06-24</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                 
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

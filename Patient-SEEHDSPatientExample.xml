@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="SEEHDSPatientExample"/>
+  <meta>
+    <profile value="https://fhir.inera.se/StructureDefinition/se-ehds-patient"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Genererad berättande text: Patient SEEHDSPatientExample</b></p><a name="SEEHDSPatientExample"> </a><a name="hcSEEHDSPatientExample"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profil: <a href="StructureDefinition-se-ehds-patient.html">SE EHDS Patient</a></p></div><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;">Anna Andersson (official) Female, Födelsedatum: 1950-01-01 ( http://electronichealth.se/identifier/personnummer#NsPersonnummer#195001011234)</p><hr/></div>
+  </text>
+  <identifier>
+    <system value="http://electronichealth.se/identifier/personnummer"/>
+    <value value="195001011234"/>
+  </identifier>
+  <name>
+    <use value="official"/>
+    <family value="Andersson"/>
+    <given value="Anna"/>
+  </name>
+  <gender value="female"/>
+  <birthDate value="1950-01-01"/>
+</Patient>
