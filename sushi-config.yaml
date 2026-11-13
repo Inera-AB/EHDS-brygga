@@ -19,6 +19,10 @@ publisher:
 jurisdiction: urn:iso:std:iso:3166#SE "Sweden"
 language: sv
 
+parameters:
+  # Pages in Swedish (generated text such as banners and headings); the pages are under sv/ and the root redirects there
+  i18n-default-lang: sv
+
 dependencies:
   hl7.fhir.uv.ips: current
   hl7.fhir.eu.eps: current

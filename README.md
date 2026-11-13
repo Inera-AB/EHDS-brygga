@@ -11,16 +11,16 @@ This repository is a GitHub template for Inera FHIR Implementation Guides. It in
 
 ## Inera branding
 
-The template uses Inera's visual identity by default. All branding is isolated to four files:
+Inera-grafiken kommer från den gemensamma IG Publisher-mallen i [Inera-AB/inera-fhir-graphic-profile](https://github.com/Inera-AB/inera-fhir-graphic-profile), som `ig.ini` pekar på:
 
-| File | Vad den gör |
-|------|------------|
-| `input/includes/fragment-css.html` | Laddar Inera CSS och favicon |
-| `input/includes/fragment-header.html` | Inera-logga i headern |
-| `input/images/inera.css` | Alla Inera-färger, typsnitt och layout |
-| `input/images/inera-*.svg / inera-*.png` | Loggor och favicon |
+```ini
+template = https://github.com/Inera-AB/inera-fhir-graphic-profile/tree/v1
+```
 
-Ta bort dessa fyra filer (och mappen `input/images/inera-*`) för att gå tillbaka till standard HL7 FHIR-styling.
+Mallen innehåller `inera.css`, logotyperna och sidhuvudet, ovanpå HL7:s `fhir2.base.template`. En rättning där når den här IG:n vid nästa bygge.
+
+- Lägg inte `fragment-css.html` eller `fragment-header.html` i `input/includes/`. De ersätter mallens filer, och då försvinner Inera-grafiken.
+- Logotyperna finns för sidorna som `assets/images/inera-logo.svg`, `inera-logo-official.svg`, `inera-logo-negative.svg` och `inera-logo.png`.
 
 ---
 
