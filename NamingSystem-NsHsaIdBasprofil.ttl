@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,55 +7,63 @@
 
 <https://fhir.inera.se/NamingSystem/NsHsaIdBasprofil> a fhir:NamingSystem ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "NsHsaIdBasprofil"] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: NamingSystem NsHsaIdBasprofil</b></p><a name=\"NsHsaIdBasprofil\"> </a><a name=\"hcNsHsaIdBasprofil\"> </a><h3>Sammanfattning</h3><table class=\"grid\"><tr><td>Definierande URL</td><td>https://fhir.inera.se/NamingSystem/NsHsaIdBasprofil</td></tr><tr><td>Version</td><td>0.1.0</td></tr><tr><td>Namn</td><td>NsHsaIdBasprofil</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>Definition</td><td><div><p>HSA-identifierare (OID 1.2.752.29.4.19) i HL7 Sweden basprofiler-r4. Alternativ OID för samma identifierarespace som 1.2.752.129.2.1.4.1. Bevaras som urn:oid: eftersom ingen kanonisk URI finns.</p>\n</div></td></tr><tr><td>Utgivare</td><td>Inera AB</td></tr></table><h3>Identifierare</h3><table class=\"grid\"><tr><td><b>Typ</b></td><td><b>Värde</b></td><td><b>Föredragen</b></td></tr><tr><td>OID</td><td>1.2.752.29.4.19</td><td/></tr><tr><td>URI</td><td>urn:oid:1.2.752.29.4.19</td><td>true</td></tr></table></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:extension ( [
-     fhir:url [ fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.url"^^xsd:anyURI ] ;
-     fhir:value [
-       a fhir:uri ;
-       fhir:v "https://fhir.inera.se/NamingSystem/NsHsaIdBasprofil"^^xsd:anyURI
+  fhir:Resource.id [ fhir:value "NsHsaIdBasprofil"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: NamingSystem NsHsaIdBasprofil</b></p><a name=\"NsHsaIdBasprofil\"> </a><a name=\"hcNsHsaIdBasprofil\"> </a><h3>Sammanfattning</h3><table class=\"grid\"><tr><td>Definierande URL</td><td>https://fhir.inera.se/NamingSystem/NsHsaIdBasprofil</td></tr><tr><td>Version</td><td>0.1.0</td></tr><tr><td>Namn</td><td>NsHsaIdBasprofil</td></tr><tr><td>Status</td><td>active</td></tr><tr><td>Definition</td><td><div><p>HSA-identifierare (OID 1.2.752.29.4.19) i HL7 Sweden basprofiler-r4. Alternativ OID för samma identifierarespace som 1.2.752.129.2.1.4.1. Bevaras som urn:oid: eftersom ingen kanonisk URI finns.</p>\n</div></td></tr><tr><td>Utgivare</td><td>Inera AB</td></tr></table><h3>Identifierare</h3><table class=\"grid\"><tr><td><b>Typ</b></td><td><b>Värde</b></td><td><b>Föredragen</b></td></tr><tr><td>OID</td><td>1.2.752.29.4.19</td><td/></tr><tr><td>URI</td><td>urn:oid:1.2.752.29.4.19</td><td>true</td></tr></table></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.url" ] ;
+     fhir:Extension.valueUri [ fhir:value "https://fhir.inera.se/NamingSystem/NsHsaIdBasprofil" ]
+  ], [
+     fhir:index 1 ;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version" ] ;
+     fhir:Extension.valueString [ fhir:value "0.1.0" ]
+  ] ;
+  fhir:NamingSystem.name [ fhir:value "NsHsaIdBasprofil"] ;
+  fhir:NamingSystem.status [ fhir:value "active"] ;
+  fhir:NamingSystem.kind [ fhir:value "identifier"] ;
+  fhir:NamingSystem.date [ fhir:value "2024-01-01"^^xsd:date] ;
+  fhir:NamingSystem.publisher [ fhir:value "Inera AB"] ;
+  fhir:NamingSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Inera AB" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.inera.se" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "oskar.thunman@inera.se" ]
      ]
-  ] [
-     fhir:url [ fhir:v "http://hl7.org/fhir/5.0/StructureDefinition/extension-NamingSystem.version"^^xsd:anyURI ] ;
-     fhir:value [
-       a fhir:string ;
-       fhir:v "0.1.0"
+  ] ;
+  fhir:NamingSystem.description [ fhir:value "HSA-identifierare (OID 1.2.752.29.4.19) i HL7 Sweden basprofiler-r4. Alternativ OID för samma identifierarespace som 1.2.752.129.2.1.4.1. Bevaras som urn:oid: eftersom ingen kanonisk URI finns."] ;
+  fhir:NamingSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "SE" ] ;
+       fhir:Coding.display [ fhir:value "Sweden" ]
      ]
-  ] ) ; # 
-  fhir:name [ fhir:v "NsHsaIdBasprofil"] ; # 
-  fhir:status [ fhir:v "active"] ; # 
-  fhir:kind [ fhir:v "identifier"] ; # 
-  fhir:date [ fhir:v "2024-01-01"^^xsd:date] ; # 
-  fhir:publisher [ fhir:v "Inera AB"] ; # 
-  fhir:contact ( [
-     fhir:name [ fhir:v "Inera AB" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://www.inera.se" ]
-     ] [
-       fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "oskar.thunman@inera.se" ]
-     ] )
-  ] ) ; # 
-  fhir:description [ fhir:v "HSA-identifierare (OID 1.2.752.29.4.19) i HL7 Sweden basprofiler-r4. Alternativ OID för samma identifierarespace som 1.2.752.129.2.1.4.1. Bevaras som urn:oid: eftersom ingen kanonisk URI finns."] ; # 
-  fhir:jurisdiction ( [
-     fhir:coding ( [
-       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "SE" ] ;
-       fhir:display [ fhir:v "Sweden" ]
-     ] )
-  ] ) ; # 
-  fhir:uniqueId ( [
-     fhir:type [ fhir:v "oid" ] ;
-     fhir:value [ fhir:v "1.2.752.29.4.19" ]
-  ] [
-     fhir:type [ fhir:v "uri" ] ;
-     fhir:value [ fhir:v "urn:oid:1.2.752.29.4.19" ] ;
-     fhir:preferred [ fhir:v true ]
-  ] ) . # 
+  ] ;
+  fhir:NamingSystem.uniqueId [
+     fhir:index 0 ;
+     fhir:NamingSystem.uniqueId.type [ fhir:value "oid" ] ;
+     fhir:NamingSystem.uniqueId.value [ fhir:value "1.2.752.29.4.19" ]
+  ], [
+     fhir:index 1 ;
+     fhir:NamingSystem.uniqueId.type [ fhir:value "uri" ] ;
+     fhir:NamingSystem.uniqueId.value [ fhir:value "urn:oid:1.2.752.29.4.19" ] ;
+     fhir:NamingSystem.uniqueId.preferred [ fhir:value "true"^^xsd:boolean ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.inera.se/NamingSystem/NsHsaIdBasprofil.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

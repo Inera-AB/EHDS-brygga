@@ -1,0 +1,82 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://fhir.inera.se/ConceptMap/DiagnosisTypeToCategoryMap> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "DiagnosisTypeToCategoryMap"] ;
+  fhir:Resource.language [ fhir:value "sv"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: ConceptMap DiagnosisTypeToCategoryMap</b></p><a name=\"DiagnosisTypeToCategoryMap\"> </a><a name=\"hcDiagnosisTypeToCategoryMap\"> </a><p>Mappning från <a href=\"CodeSystem-DiagnosisTypeCS.html\">https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</a> till <a href=\"CodeSystem-DiagnosisTypeCS.html\">https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</a></p><br/><p>Mappning från <a href=\"CodeSystem-DiagnosisTypeCS.html\">Diagnos Typ (kv_diagnostyp)</a> to <a href=\"CodeSystem-DiagnosisTypeCS.html\">Diagnos Typ (kv_diagnostyp)</a></p><table class=\"grid\"><tr><td><b>Källkod</b></td><td><b>Relation</b></td><td><b>Målkod</b></td></tr><tr><td>HD (Huvuddiagnos)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equal\" title=\"equal\">is equal to</a></td><td>HD (Huvuddiagnos)</td></tr><tr><td>BY (Bidiagnos)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#concept-map-equivalence-equal\" title=\"equal\">is equal to</a></td><td>BY (Bidiagnos)</td></tr></table></div>"
+  ] ;
+  fhir:ConceptMap.url [ fhir:value "https://fhir.inera.se/ConceptMap/DiagnosisTypeToCategoryMap"] ;
+  fhir:ConceptMap.version [ fhir:value "0.1.0"] ;
+  fhir:ConceptMap.name [ fhir:value "DiagnosisTypeToCategoryMap"] ;
+  fhir:ConceptMap.title [ fhir:value "DiagnosisType → Condition.category"] ;
+  fhir:ConceptMap.status [ fhir:value "draft"] ;
+  fhir:ConceptMap.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:ConceptMap.date [ fhir:value "2026-11-13T15:19:44+00:00"^^xsd:dateTime] ;
+  fhir:ConceptMap.publisher [ fhir:value "Inera AB"] ;
+  fhir:ConceptMap.contact [
+     fhir:index -1 ;
+     fhir:ContactDetail.name [ fhir:value "Inera AB" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.inera.se" ]
+     ], [
+       fhir:index -1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "oskar.thunman@inera.se" ]
+     ]
+  ] ;
+  fhir:ConceptMap.description [ fhir:value "Mappning av RIVTA diagnosisType (HD/BY) från kv_diagnostyp till FHIR Condition.category[diagnostyp]"] ;
+  fhir:ConceptMap.jurisdiction [
+     fhir:index -1 ;
+     fhir:CodeableConcept.coding [
+       fhir:index -1 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "SE" ] ;
+       fhir:Coding.display [ fhir:value "Sweden" ]
+     ]
+  ] ;
+  fhir:ConceptMap.sourceUri [ fhir:value "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"] ;
+  fhir:ConceptMap.targetUri [ fhir:value "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"] ;
+  fhir:ConceptMap.group [
+     fhir:index -1 ;
+     fhir:ConceptMap.group.source [ fhir:value "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp" ] ;
+     fhir:ConceptMap.group.target [ fhir:value "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp" ] ;
+     fhir:ConceptMap.group.element [
+       fhir:index -1 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "HD" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Huvuddiagnos" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index -1 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "HD" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Huvuddiagnos" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ], [
+       fhir:index -1 ;
+       fhir:ConceptMap.group.element.code [ fhir:value "BY" ] ;
+       fhir:ConceptMap.group.element.display [ fhir:value "Bidiagnos" ] ;
+       fhir:ConceptMap.group.element.target [
+         fhir:index -1 ;
+         fhir:ConceptMap.group.element.target.code [ fhir:value "BY" ] ;
+         fhir:ConceptMap.group.element.target.display [ fhir:value "Bidiagnos" ] ;
+         fhir:ConceptMap.group.element.target.equivalence [ fhir:value "equal" ]
+       ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.inera.se/ConceptMap/DiagnosisTypeToCategoryMap.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

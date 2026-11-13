@@ -20,7 +20,7 @@
     "description" : "Ineras kodverk för diagnostyp (kv_diagnostyp) hämtat från terminologitjänsten.\nAnger om en diagnos är huvud- eller bidiagnos enligt Ineras RIVTA-tjänstekontrakt GetDiagnosis:2.\nKoderna HD och BY används direkt som värden i FHIR Condition.category.",
     "uses" : {
     },
-    "ValueSet-SEDiagnosisType.html" : "SE Diagnos Typ",
-    "ConceptMap-DiagnosisTypeToCategoryMap.html" : "DiagnosisType → Condition.category"
+    "ConceptMap-DiagnosisTypeToCategoryMap.html" : "DiagnosisType → Condition.category",
+    "ValueSet-SEDiagnosisType.html" : "SE Diagnos Typ"
   }]
 }

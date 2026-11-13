@@ -208,8 +208,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.45"],
     "uses" : {
     },
-    "StructureDefinition-se-ehds-condition.html" : "SE EHDS Condition",
     "StructureDefinition-se-ehds-patient.html" : "SE EHDS Patient",
+    "StructureDefinition-se-ehds-condition.html" : "SE EHDS Condition",
     "StructureDefinition-se-ehds-document-reference.html" : "SE EHDS DocumentReference"
   },
   {
@@ -224,8 +224,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.57"],
     "uses" : {
     },
-    "StructureDefinition-se-ehds-condition.html" : "SE EHDS Condition",
     "StructureDefinition-se-ehds-patient.html" : "SE EHDS Patient",
+    "StructureDefinition-se-ehds-condition.html" : "SE EHDS Condition",
     "StructureDefinition-se-ehds-document-reference.html" : "SE EHDS DocumentReference"
   },
   {
@@ -240,8 +240,8 @@
     "sources" : ["2.16.840.1.113883.4.642.3.20"],
     "uses" : {
     },
-    "StructureDefinition-se-ehds-condition.html" : "SE EHDS Condition",
     "StructureDefinition-se-ehds-patient.html" : "SE EHDS Patient",
+    "StructureDefinition-se-ehds-condition.html" : "SE EHDS Condition",
     "StructureDefinition-se-ehds-document-reference.html" : "SE EHDS DocumentReference"
   },
   {

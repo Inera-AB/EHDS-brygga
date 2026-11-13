@@ -1,6 +1,5 @@
 @prefix fhir: <http://hl7.org/fhir/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -8,48 +7,60 @@
 
 <https://fhir.inera.se/CodeSystem/DiagnosisTypeCS> a fhir:CodeSystem ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "DiagnosisTypeCS"] ; # 
-  fhir:text [
-     fhir:status [ fhir:v "generated" ] ;
-     fhir:div [ fhir:v "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem DiagnosisTypeCS</b></p><a name=\"DiagnosisTypeCS\"> </a><a name=\"hcDiagnosisTypeCS\"> </a><p>Detta case-sensitive kodsystem <code>https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">HD<a name=\"DiagnosisTypeCS-HD\"> </a></td><td>Huvuddiagnos</td><td>Huvuddiagnos (HD) – primär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType HD</td></tr><tr><td style=\"white-space:nowrap\">BY<a name=\"DiagnosisTypeCS-BY\"> </a></td><td>Bidiagnos</td><td>Bidiagnos (BY) – sekundär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType BY</td></tr></table></div>"^^rdf:XMLLiteral ]
-  ] ; # 
-  fhir:url [ fhir:v "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.0"] ; # 
-  fhir:name [ fhir:v "DiagnosisTypeCS"] ; # 
-  fhir:title [ fhir:v "Diagnos Typ (kv_diagnostyp)"] ; # 
-  fhir:status [ fhir:v "draft"] ; # 
-  fhir:experimental [ fhir:v true] ; # 
-  fhir:date [ fhir:v "2026-06-24T18:55:38+00:00"^^xsd:dateTime] ; # 
-  fhir:publisher [ fhir:v "Inera AB"] ; # 
-  fhir:contact ( [
-     fhir:name [ fhir:v "Inera AB" ] ;
-     fhir:telecom ( [
-       fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "https://www.inera.se" ]
-     ] [
-       fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "oskar.thunman@inera.se" ]
-     ] )
-  ] ) ; # 
-  fhir:description [ fhir:v "Ineras kodverk för diagnostyp (kv_diagnostyp) hämtat från terminologitjänsten.\nAnger om en diagnos är huvud- eller bidiagnos enligt Ineras RIVTA-tjänstekontrakt GetDiagnosis:2.\nKoderna HD och BY används direkt som värden i FHIR Condition.category."] ; # 
-  fhir:jurisdiction ( [
-     fhir:coding ( [
-       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "SE" ] ;
-       fhir:display [ fhir:v "Sweden" ]
-     ] )
-  ] ) ; # 
-  fhir:caseSensitive [ fhir:v true] ; # 
-  fhir:content [ fhir:v "complete"] ; # 
-  fhir:concept ( [
-     fhir:code [ fhir:v "HD" ] ;
-     fhir:display [ fhir:v "Huvuddiagnos" ] ;
-     fhir:definition [ fhir:v "Huvuddiagnos (HD) – primär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType HD" ]
-  ] [
-     fhir:code [ fhir:v "BY" ] ;
-     fhir:display [ fhir:v "Bidiagnos" ] ;
-     fhir:definition [ fhir:v "Bidiagnos (BY) – sekundär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType BY" ]
-  ] ) . # 
+  fhir:Resource.id [ fhir:value "DiagnosisTypeCS"] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Genererad berättande text: CodeSystem DiagnosisTypeCS</b></p><a name=\"DiagnosisTypeCS\"> </a><a name=\"hcDiagnosisTypeCS\"> </a><p>Detta case-sensitive kodsystem <code>https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp</code> definierar följande koder:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Kod</b></td><td><b>Visning</b></td><td><b>Definition</b></td></tr><tr><td style=\"white-space:nowrap\">HD<a name=\"DiagnosisTypeCS-HD\"> </a></td><td>Huvuddiagnos</td><td>Huvuddiagnos (HD) – primär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType HD</td></tr><tr><td style=\"white-space:nowrap\">BY<a name=\"DiagnosisTypeCS-BY\"> </a></td><td>Bidiagnos</td><td>Bidiagnos (BY) – sekundär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType BY</td></tr></table></div>"
+  ] ;
+  fhir:CodeSystem.url [ fhir:value "https://terminologitjansten.inera.se/inera-kodverksforvaltning/kodverk/kv_diagnostyp"] ;
+  fhir:CodeSystem.version [ fhir:value "0.1.0"] ;
+  fhir:CodeSystem.name [ fhir:value "DiagnosisTypeCS"] ;
+  fhir:CodeSystem.title [ fhir:value "Diagnos Typ (kv_diagnostyp)"] ;
+  fhir:CodeSystem.status [ fhir:value "draft"] ;
+  fhir:CodeSystem.experimental [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.date [ fhir:value "2026-11-13T15:19:44+00:00"^^xsd:dateTime] ;
+  fhir:CodeSystem.publisher [ fhir:value "Inera AB"] ;
+  fhir:CodeSystem.contact [
+     fhir:index 0 ;
+     fhir:ContactDetail.name [ fhir:value "Inera AB" ] ;
+     fhir:ContactDetail.telecom [
+       fhir:index 0 ;
+       fhir:ContactPoint.system [ fhir:value "url" ] ;
+       fhir:ContactPoint.value [ fhir:value "https://www.inera.se" ]
+     ], [
+       fhir:index 1 ;
+       fhir:ContactPoint.system [ fhir:value "email" ] ;
+       fhir:ContactPoint.value [ fhir:value "oskar.thunman@inera.se" ]
+     ]
+  ] ;
+  fhir:CodeSystem.description [ fhir:value "Ineras kodverk för diagnostyp (kv_diagnostyp) hämtat från terminologitjänsten.\nAnger om en diagnos är huvud- eller bidiagnos enligt Ineras RIVTA-tjänstekontrakt GetDiagnosis:2.\nKoderna HD och BY används direkt som värden i FHIR Condition.category."] ;
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ] ;
+       fhir:Coding.code [ fhir:value "SE" ] ;
+       fhir:Coding.display [ fhir:value "Sweden" ]
+     ]
+  ] ;
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean] ;
+  fhir:CodeSystem.content [ fhir:value "complete"] ;
+  fhir:CodeSystem.concept [
+     fhir:index 0 ;
+     fhir:CodeSystem.concept.code [ fhir:value "HD" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Huvuddiagnos" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Huvuddiagnos (HD) – primär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType HD" ]
+  ], [
+     fhir:index 1 ;
+     fhir:CodeSystem.concept.code [ fhir:value "BY" ] ;
+     fhir:CodeSystem.concept.display [ fhir:value "Bidiagnos" ] ;
+     fhir:CodeSystem.concept.definition [ fhir:value "Bidiagnos (BY) – sekundär diagnos satt vid ett vårdtillfälle, motsvarar RIVTA-diagnosType BY" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://fhir.inera.se/CodeSystem/DiagnosisTypeCS.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 
